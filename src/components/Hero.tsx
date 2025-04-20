@@ -196,7 +196,7 @@ export const Hero = () => {
   };
 
   return (
-    <div className="relative min-h-screen">
+    <div className="relative min-h-screen bg-gradient-to-br from-[#F8F9FF] via-[#F0F2FF] to-[#FFFFFF]">
       {/* Subtle gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#F8F9FF] via-white to-[#F0F2FF]" />
       
@@ -257,11 +257,11 @@ export const Hero = () => {
             </Card>
 
             {/* Decorative Image */}
-            <div className="w-full -mt-4 md:-mt-8">
+            <div className="w-full">
               <img 
-                src="/lovable-uploads/2ecbff68-5598-4978-8eff-318724fddc7a.png"
+                src="/lovable-uploads/e61a4385-225b-43cf-9d4a-a13fb82782bb.png"
                 alt="Social media decoration"
-                className="w-full h-auto object-cover"
+                className="w-full h-auto object-cover -mt-2 md:-mt-8"
               />
             </div>
           </div>

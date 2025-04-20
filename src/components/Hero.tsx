@@ -2,7 +2,7 @@
 import { useTranslation } from 'react-i18next';
 import { Card } from './ui/card';
 import { cn } from '@/lib/utils';
-import { User, Heart, Play, Instagram, Youtube, Facebook } from 'lucide-react';
+import { User, Heart, Play, Instagram, Youtube, Facebook, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 
 export const Hero = () => {
@@ -305,6 +305,9 @@ export const Hero = () => {
                       )}>
                         {service.title}
                       </span>
+                    </div>
+                    <div className="flex items-center justify-center">
+                      <ArrowRight className={cn("w-5 h-5 opacity-70 group-hover:opacity-100 group-hover:translate-x-1 transition-all", networkTheme.primary)} />
                     </div>
                   </a>
                 ))}

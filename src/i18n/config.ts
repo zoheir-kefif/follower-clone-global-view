@@ -1,3 +1,4 @@
+
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
@@ -15,7 +16,7 @@ const resources = {
       "features.growth": "Croissance du compte",
       "features.posts": "Analyse des publications",
       "hero.main_title": "Obtenez des fans français actifs",
-      "hero.subtitle": "Meilleure qualité sur le marché français, livré rapidement.",
+      "hero.subtitle_pack": "Meilleure qualité sur le marché français, livré rapidement.",
       "hero.instagram_pack": "Achetez Instagram",
       "hero.likes_pack": "Likes Instagram",
       "hero.views_pack": "Vues Instagram"
@@ -33,7 +34,7 @@ const resources = {
       "features.growth": "Account growth",
       "features.posts": "Post analysis",
       "hero.main_title": "Get active French fans",
-      "hero.subtitle": "Best quality on the French market, delivered quickly.",
+      "hero.subtitle_pack": "Best quality on the French market, delivered quickly.",
       "hero.instagram_pack": "Buy Instagram",
       "hero.likes_pack": "Instagram Likes",
       "hero.views_pack": "Instagram Views"
@@ -51,10 +52,28 @@ const resources = {
       "features.growth": "Konto-Wachstum",
       "features.posts": "Beitragsanalyse",
       "hero.main_title": "Holen Sie sich aktive französische Fans",
-      "hero.subtitle": "Beste Qualität auf dem französischen Markt, schnell geliefert.",
+      "hero.subtitle_pack": "Beste Qualität auf dem französischen Markt, schnell geliefert.",
       "hero.instagram_pack": "Instagram kaufen",
       "hero.likes_pack": "Instagram Likes",
       "hero.views_pack": "Instagram Views"
+    }
+  },
+  it: {
+    translation: {
+      "hero.title": "Analizza qualsiasi account Instagram",
+      "hero.subtitle": "Ottieni statistiche dettagliate su qualsiasi account Instagram pubblico",
+      "hero.placeholder": "Inserisci un nome utente Instagram",
+      "hero.button": "Analizzare",
+      "features.title": "Funzionalità",
+      "features.engagement": "Tasso di engagement",
+      "features.followers": "Analisi dei follower",
+      "features.growth": "Crescita dell'account",
+      "features.posts": "Analisi dei post",
+      "hero.main_title": "Ottieni fan francesi attivi",
+      "hero.subtitle_pack": "Miglior qualità sul mercato francese, consegnato rapidamente.",
+      "hero.instagram_pack": "Acquista Instagram",
+      "hero.likes_pack": "Like Instagram",
+      "hero.views_pack": "Visualizzazioni Instagram"
     }
   }
 };

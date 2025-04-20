@@ -198,8 +198,8 @@ export const Hero = () => {
 
   return (
     <div className="relative min-h-screen">
-      {/* Instagram-style gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#9b87f5] via-[#D946EF] to-[#FFDEE2]" />
+      {/* Enhanced gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#F8F9FF] via-[#E5DEFF] to-[#FFDEE2]" />
       
       {/* Main Content */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
@@ -276,4 +276,3 @@ export const Hero = () => {
 };
 
 export default Hero;
-

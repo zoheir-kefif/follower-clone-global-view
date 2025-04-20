@@ -1,4 +1,3 @@
-
 import { useTranslation } from 'react-i18next';
 import { Card } from './ui/card';
 import { cn } from '@/lib/utils';
@@ -102,20 +101,20 @@ export const Hero = () => {
             ))}
           </div>
 
-          <Card className="max-w-xl mx-auto bg-white/90 backdrop-blur border-orange-100/30 shadow-lg overflow-hidden rounded-xl">
+          <Card className="max-w-xl mx-auto bg-gradient-to-br from-orange-50/30 to-orange-100/30 backdrop-blur border-orange-100/20 shadow-lg overflow-hidden rounded-xl">
             <div className="p-3 md:p-4 space-y-2.5">
               {services.map((service, index) => (
                 <button
                   key={index}
-                  className="w-full bg-white hover:bg-orange-50/20 rounded-lg p-3 md:p-3.5 flex items-center justify-between shadow-sm hover:shadow transition-all duration-200 group"
+                  className="w-full bg-white hover:bg-orange-50 rounded-lg p-3 md:p-3.5 flex items-center justify-between shadow-md hover:shadow-xl transition-all duration-200 group"
                 >
                   <div className="flex items-center gap-3 md:gap-4">
-                    <div className="w-11 h-11 md:w-12 md:h-12 bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl flex items-center justify-center p-2 group-hover:scale-105 transition-transform duration-300">
+                    <div className="w-11 h-11 md:w-12 md:h-12 bg-gradient-to-br from-orange-100 to-orange-200 rounded-xl flex items-center justify-center p-2 group-hover:scale-105 transition-transform duration-300">
                       <img src={service.icon} alt="" className="w-7 h-7 md:w-8 md:h-8 object-contain" />
                     </div>
-                    <span className="text-base md:text-lg font-semibold text-gray-800">{service.title}</span>
+                    <span className="text-base md:text-lg font-semibold text-gray-900">{service.title}</span>
                   </div>
-                  <ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-orange-400 group-hover:translate-x-1 transition-transform duration-300" />
+                  <ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-orange-500 group-hover:translate-x-1 transition-transform duration-300" />
                 </button>
               ))}
             </div>
@@ -141,4 +140,3 @@ export const Hero = () => {
     </div>
   );
 };
-

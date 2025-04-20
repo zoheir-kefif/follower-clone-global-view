@@ -1,4 +1,3 @@
-
 import { Card } from '../ui/card';
 import { NetworkService } from '../social/NetworkService';
 import { cn } from '@/lib/utils';
@@ -8,8 +7,12 @@ import { useTranslation } from 'react-i18next';
 interface ServicesCardProps {
   selectedNetwork: string;
   networkTheme: {
-    indicator: string;
+    primary: string;
+    secondary: string;
+    icon: string;
+    border: string;
     cardBg: string;
+    indicator: string;
   };
 }
 

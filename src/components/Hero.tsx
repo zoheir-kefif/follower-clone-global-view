@@ -13,8 +13,19 @@ export const Hero = () => {
 
   return (
     <div className="relative min-h-screen">
+      {/* Base gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#F8F9FF] via-white to-[#F0F2FF]" />
       
+      {/* Decorative image layer */}
+      <div className="absolute inset-0 pt-[75%]">
+        <img 
+          src="/lovable-uploads/2ecbff68-5598-4978-8eff-318724fddc7a.png"
+          alt="Social media decoration"
+          className="absolute bottom-0 left-0 w-full h-auto object-cover"
+        />
+      </div>
+      
+      {/* Content layer */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
         <div className="text-center">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-900 tracking-tight leading-[1.2] md:leading-[1.1]">
@@ -40,12 +51,6 @@ export const Hero = () => {
             <ServicesCard
               selectedNetwork={selectedNetwork}
               networkTheme={networkTheme}
-            />
-
-            <img 
-              src="/lovable-uploads/2ecbff68-5598-4978-8eff-318724fddc7a.png"
-              alt="Social media decoration"
-              className="w-full h-auto object-cover -mt-1"
             />
           </div>
 

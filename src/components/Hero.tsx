@@ -10,22 +10,18 @@ export const Hero = () => {
     { 
       icon: "/lovable-uploads/33f3a639-e3bf-4f58-b8f4-52d6b3d89a52.png",
       href: 'https://instagram.com',
-      gradient: 'from-pink-500 via-red-500 to-yellow-500'
     },
     { 
       icon: "/lovable-uploads/1471a88d-c2f1-4898-b567-3fb37833cf7e.png",
       href: 'https://tiktok.com',
-      gradient: 'from-neutral-600 to-neutral-500'
     },
     { 
       icon: "/lovable-uploads/6149cbf1-7bd1-4819-bc51-388bc865b2b6.png",
       href: 'https://youtube.com',
-      gradient: 'from-red-600 to-red-500'
     },
     { 
       icon: "/lovable-uploads/79a016fe-1699-4def-bbdd-3d5a0a944fbd.png",
       href: 'https://facebook.com',
-      gradient: 'from-blue-600 to-blue-500'
     }
   ];
 
@@ -98,12 +94,9 @@ export const Hero = () => {
                 href={network.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={cn(
-                  "flex items-center justify-center p-6 rounded-2xl bg-gradient-to-br shadow-lg hover:shadow-xl transition-all duration-300",
-                  network.gradient
-                )}
+                className="w-16 h-16 bg-white rounded-2xl shadow flex items-center justify-center p-3 hover:shadow-lg transition-shadow"
               >
-                <img src={network.icon} alt="" className="w-8 h-8" />
+                <img src={network.icon} alt="" className="w-full h-full object-contain" />
               </a>
             ))}
           </div>

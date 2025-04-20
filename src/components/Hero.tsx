@@ -8,12 +8,12 @@ export const Hero = () => {
     <div className="bg-gradient-to-b from-purple-600 to-pink-500 py-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
         <h1 className="text-4xl sm:text-5xl font-bold mb-6">
-          <span>Obtenez des fans </span>
+          <span>{t('hero.main_title')} </span>
           <span className="text-yellow-400">français actifs</span>
           <span> en quelques secondes !</span>
         </h1>
         <p className="text-lg mb-12">
-          Meilleure qualité sur le marché français, livré rapidement.
+          {t('hero.subtitle')}
         </p>
         
         <div className="flex justify-center gap-4 mb-12">
@@ -27,17 +27,17 @@ export const Hero = () => {
           <div className="grid grid-cols-1 gap-4">
             <div className="flex items-center gap-2 p-3 border rounded-lg cursor-pointer hover:bg-gray-50">
               <div className="w-8 h-8 bg-[#F85757] rounded-full flex items-center justify-center text-white">1</div>
-              <span className="flex-1 text-left text-gray-900">Achetez Instagram</span>
+              <span className="flex-1 text-left text-gray-900">{t('hero.instagram_pack')}</span>
               <span className="text-gray-400">›</span>
             </div>
             <div className="flex items-center gap-2 p-3 border rounded-lg cursor-pointer hover:bg-gray-50">
               <div className="w-8 h-8 bg-[#F85757] rounded-full flex items-center justify-center text-white">2</div>
-              <span className="flex-1 text-left text-gray-900">Likes Instagram</span>
+              <span className="flex-1 text-left text-gray-900">{t('hero.likes_pack')}</span>
               <span className="text-gray-400">›</span>
             </div>
             <div className="flex items-center gap-2 p-3 border rounded-lg cursor-pointer hover:bg-gray-50">
               <div className="w-8 h-8 bg-[#F85757] rounded-full flex items-center justify-center text-white">3</div>
-              <span className="flex-1 text-left text-gray-900">Vues Instagram</span>
+              <span className="flex-1 text-left text-gray-900">{t('hero.views_pack')}</span>
               <span className="text-gray-400">›</span>
             </div>
           </div>

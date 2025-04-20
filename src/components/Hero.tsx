@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Card } from './ui/card';
 import { cn } from '@/lib/utils';
-import { Play, User, Heart } from 'lucide-react';
+import { User, Heart, Play, Instagram, TikTok } from 'lucide-react';
 import { useState } from 'react';
 
 export const Hero = () => {
@@ -10,11 +10,11 @@ export const Hero = () => {
 
   const socialNetworks = [
     { 
-      icon: "/lovable-uploads/33f3a639-e3bf-4f58-b8f4-52d6b3d89a52.png",
+      icon: <Instagram className="w-14 h-14 md:w-16 md:h-16 text-transparent bg-clip-text bg-gradient-to-r from-[#8A3AB9] via-[#E95950] to-[#FCCC63]" />,
       href: 'https://instagram.com',
     },
     { 
-      icon: "/lovable-uploads/1471a88d-c2f1-4898-b567-3fb37833cf7e.png",
+      icon: <TikTok className="w-14 h-14 md:w-16 md:h-16 text-black" />,
       href: 'https://tiktok.com',
     },
     { 
@@ -30,39 +30,36 @@ export const Hero = () => {
   const networkServices = {
     instagram: [
       { 
-        icon: "/lovable-uploads/7585a1a3-ed4e-45a6-af69-2b69ed8725b5.png",
+        icon: <User className="w-7 h-7 md:w-8 md:h-8 text-transparent bg-clip-text bg-gradient-to-r from-[#8A3AB9] via-[#E95950] to-[#FCCC63]" />,
         title: t('hero.instagram_followers'),
-        href: 'https://instagram.com/followers'
+        href: '/instagram-followers'
       },
       { 
-        icon: "/lovable-uploads/2e71b6ef-f280-4fcd-bd47-89140bbbfcd2.png",
+        icon: <Heart className="w-7 h-7 md:w-8 md:h-8 text-transparent bg-clip-text bg-gradient-to-r from-[#8A3AB9] via-[#E95950] to-[#FCCC63]" />,
         title: t('hero.instagram_likes'),
-        href: 'https://instagram.com/likes'
+        href: '/instagram-likes'
       },
       { 
-        icon: "/lovable-uploads/78547af1-2a14-433e-9a29-455baf369888.png",
+        icon: <Play className="w-7 h-7 md:w-8 md:h-8 text-transparent bg-clip-text bg-gradient-to-r from-[#8A3AB9] via-[#E95950] to-[#FCCC63]" />,
         title: t('hero.instagram_views'),
-        href: 'https://instagram.com/views'
+        href: '/instagram-views'
       }
     ],
     tiktok: [
       {
-        icon: User,
+        icon: <User className="w-7 h-7 md:w-8 md:h-8 text-black" />,
         title: 'Abonnés Tiktok',
-        href: 'https://tiktok.com/followers',
-        iconClassName: 'w-7 h-7 md:w-8 md:h-8 text-white'
+        href: '/tiktok-followers'
       },
       {
-        icon: Heart,
+        icon: <Heart className="w-7 h-7 md:w-8 md:h-8 text-black" />,
         title: 'Likes Tiktok',
-        href: 'https://tiktok.com/likes',
-        iconClassName: 'w-7 h-7 md:w-8 md:h-8 text-white'
+        href: '/tiktok-likes'
       },
       {
-        icon: Play,
+        icon: <Play className="w-7 h-7 md:w-8 md:h-8 text-black" />,
         title: 'Vues Tiktok',
-        href: 'https://tiktok.com/views',
-        iconClassName: 'w-7 h-7 md:w-8 md:h-8 text-white'
+        href: '/tiktok-views'
       }
     ]
   };

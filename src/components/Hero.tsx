@@ -1,3 +1,4 @@
+
 import { useTranslation } from 'react-i18next';
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
@@ -17,7 +18,7 @@ export const Hero = () => {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-900 tracking-tight leading-[1.2] md:leading-[1.1]">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-900 tracking-tight leading-[1.2] md:leading-[1.1]">
             {t('hero.title_part1')}
             <span className="block mt-2 relative bg-[length:200%_100%] animate-shimmer bg-gradient-to-r from-[#F2B33D] via-[#F27830] to-[#F2B33D] bg-clip-text text-transparent">
               {t('hero.title_highlight')}
@@ -27,7 +28,7 @@ export const Hero = () => {
             </span>
           </h1>
           
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed mb-8">
+          <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed mb-8">
             {t('hero.subtitle')}
           </p>
 

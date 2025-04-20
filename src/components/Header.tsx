@@ -17,13 +17,13 @@ export const Header = () => {
               <img 
                 src="/lovable-uploads/916e8d18-4dd9-45ff-b0bd-4da2ee9e817a.png" 
                 alt="BoostYourFame" 
-                className="h-8"
+                className="h-8 md:h-10"
               />
             </a>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-6">
             <a href="/instagram" className="flex items-center gap-2 text-gray-600 hover:text-[#F85757] transition-colors duration-200">
               <Instagram size={20} />
               <span>Instagram</span>
@@ -43,7 +43,7 @@ export const Header = () => {
           </nav>
 
           {/* Right side items */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 md:gap-4">
             <a href="/contact" className="hidden md:block text-gray-600 hover:text-[#F85757] transition-colors duration-200">
               Contact
             </a>
@@ -66,11 +66,13 @@ export const Header = () => {
         </div>
 
         {/* Mobile Navigation */}
-        <div className={cn(
-          "md:hidden",
-          isMenuOpen ? "block" : "hidden"
-        )}>
-          <div className="px-2 pt-2 pb-3 space-y-1 bg-white rounded-md shadow-lg border border-gray-100">
+        <div
+          className={cn(
+            "fixed inset-x-0 top-[65px] p-4 md:hidden bg-white/95 backdrop-blur-sm border-b border-gray-100 transition-all duration-300 ease-in-out transform",
+            isMenuOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
+          )}
+        >
+          <nav className="flex flex-col space-y-4">
             <a href="/instagram" className="flex items-center gap-2 px-3 py-2 rounded-md text-gray-600 hover:text-[#F85757] hover:bg-gray-50">
               <Instagram size={20} />
               <span>Instagram</span>
@@ -87,10 +89,10 @@ export const Header = () => {
               <Facebook size={20} />
               <span>Facebook</span>
             </a>
-            <a href="/contact" className="block px-3 py-2 rounded-md text-gray-600 hover:text-[#F85757] hover:bg-gray-50">
+            <a href="/contact" className="px-3 py-2 rounded-md text-gray-600 hover:text-[#F85757] hover:bg-gray-50">
               Contact
             </a>
-          </div>
+          </nav>
         </div>
       </div>
     </header>

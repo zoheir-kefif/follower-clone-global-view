@@ -197,28 +197,43 @@ export const Hero = () => {
   };
 
   return (
-    <div className="relative min-h-screen overflow-hidden">
-      {/* Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#9b87f5]/10 via-white to-[#D946EF]/10" />
+    <div className="relative min-h-screen">
+      {/* Refined Modern Background */}
+      <div className="absolute inset-0 bg-gradient-to-r from-white via-[#fbfaff] to-white z-0" />
       
-      {/* Animated Blobs */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-4 -right-4 w-96 h-96 bg-gradient-to-br from-[#9b87f5]/20 to-[#D946EF]/20 rounded-full blur-3xl animate-blob" />
-        <div className="absolute top-1/2 -right-4 w-96 h-96 bg-gradient-to-br from-[#D946EF]/30 to-[#9b87f5]/30 rounded-full blur-3xl animate-blob animation-delay-2000" />
-        <div className="absolute -bottom-8 -left-4 w-96 h-96 bg-gradient-to-br from-[#9b87f5]/25 to-[#D946EF]/25 rounded-full blur-3xl animate-blob animation-delay-4000" />
-      </div>
-
-      {/* Noise Texture Overlay */}
-      <div className="absolute inset-0 opacity-30"
+      {/* Subtle diagonal lines */}
+      <div 
+        className="absolute inset-0 opacity-5 z-0"
         style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
-          backgroundRepeat: 'repeat',
-          mixBlendMode: 'overlay'
+          backgroundImage: `linear-gradient(135deg, #9b87f5 25%, transparent 25%, transparent 50%, #9b87f5 50%, #9b87f5 75%, transparent 75%, transparent)`,
+          backgroundSize: '30px 30px'
         }}
       />
+      
+      {/* Subtle gradient accents */}
+      <div className="absolute right-0 top-20 w-96 h-96 rounded-full opacity-10 bg-gradient-to-br from-[#9b87f5] to-[#D946EF] blur-2xl z-0" />
+      <div className="absolute left-0 bottom-20 w-64 h-64 rounded-full opacity-10 bg-gradient-to-tr from-[#D946EF] to-[#9b87f5] blur-2xl z-0" />
+      
+      {/* Light particles effect */}
+      <div className="absolute inset-0 z-0">
+        {[...Array(6)].map((_, i) => (
+          <div 
+            key={i}
+            className="absolute rounded-full bg-white shadow-[0_0_10px_rgba(155,135,245,0.5)]"
+            style={{
+              width: `${Math.random() * 4 + 2}px`,
+              height: `${Math.random() * 4 + 2}px`,
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              opacity: Math.random() * 0.5 + 0.3,
+              animation: `float ${Math.random() * 10 + 15}s ease-in-out infinite`
+            }}
+          />
+        ))}
+      </div>
 
       {/* Main Content */}
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 z-10">
         <div className="text-center">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-900 tracking-tight leading-[1.2] md:leading-[1.1]">
             {t('hero.title_part1')} <img src="/lovable-uploads/3ff93094-3bc0-4421-bf9a-ebc8ec672107.png" alt="heart" className="w-8 h-8 inline mr-1" /> <span>{t('hero.title_part1_5')}</span>
@@ -287,6 +302,24 @@ export const Hero = () => {
           </Card>
         </div>
       </div>
+
+      {/* Add custom keyframes for the floating effect */}
+      <style jsx>{`
+        @keyframes float {
+          0%, 100% {
+            transform: translateY(0) translateX(0);
+          }
+          25% {
+            transform: translateY(-20px) translateX(10px);
+          }
+          50% {
+            transform: translateY(10px) translateX(20px);
+          }
+          75% {
+            transform: translateY(15px) translateX(-10px);
+          }
+        }
+      `}</style>
     </div>
   );
 };

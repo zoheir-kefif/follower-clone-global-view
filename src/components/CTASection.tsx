@@ -1,7 +1,6 @@
-
 export const CTASection = () => {
   return (
-    <div className="bg-gradient-to-r from-orange-400 to-pink-500 py-16">
+    <div className="bg-gradient-to-r from-[#9b87f5] to-[#D946EF] py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between">
           <div className="text-white mb-8 md:mb-0 max-w-xl">
@@ -15,7 +14,7 @@ export const CTASection = () => {
             <p className="mb-6">
               La meilleure qualité, livré en plus, 100% sans risque et parfaitement sécurisé. Livraison immédiate.
             </p>
-            <button className="bg-white text-pink-500 px-8 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors">
+            <button className="bg-white text-[#9b87f5] px-8 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors">
               Choisissez un pack
             </button>
           </div>

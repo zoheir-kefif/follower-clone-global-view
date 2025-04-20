@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Card } from './ui/card';
@@ -198,18 +199,18 @@ export const Hero = () => {
   return (
     <div className="relative min-h-screen bg-white">
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-4 right-0 w-96 h-96 bg-gradient-to-br from-orange-50 to-orange-100/50 rounded-full blur-3xl"></div>
-        <div className="absolute top-20 right-20 w-72 h-72 bg-gradient-to-br from-gray-200/30 to-gray-300/20 rounded-full blur-3xl animate-blob"></div>
-        <div className="absolute bottom-20 left-20 w-72 h-72 bg-gradient-to-br from-gray-200/30 to-gray-300/20 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-gray-100/20 to-gray-200/20 rounded-full blur-3xl animate-blob animation-delay-4000"></div>
-        <div className="absolute top-1/3 left-0 w-64 h-64 bg-gradient-to-br from-orange-50/40 to-orange-100/30 rounded-full blur-3xl"></div>
+        <div className="absolute -top-4 right-0 w-96 h-96 bg-gradient-to-br from-purple-50 to-pink-100/50 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 right-20 w-72 h-72 bg-gradient-to-br from-purple-200/30 to-pink-300/20 rounded-full blur-3xl animate-blob"></div>
+        <div className="absolute bottom-20 left-20 w-72 h-72 bg-gradient-to-br from-purple-200/30 to-pink-300/20 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-purple-100/20 to-pink-200/20 rounded-full blur-3xl animate-blob animation-delay-4000"></div>
+        <div className="absolute top-1/3 left-0 w-64 h-64 bg-gradient-to-br from-purple-50/40 to-pink-100/30 rounded-full blur-3xl"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
         <div className="text-center">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-900 tracking-tight leading-[1.2] md:leading-[1.1]">
             {t('hero.title_part1')} <img src="/lovable-uploads/3ff93094-3bc0-4421-bf9a-ebc8ec672107.png" alt="heart" className="w-8 h-8 inline mr-1" /> <span>{t('hero.title_part1_5')}</span>
-            <span className="bg-[length:200%_100%] animate-shimmer bg-gradient-to-r from-[#F2B33D] via-[#F27830] to-[#F2B33D] bg-clip-text text-transparent">
+            <span className="bg-[length:200%_100%] animate-shimmer bg-gradient-to-r from-[#9b87f5] via-[#D946EF] to-[#9b87f5] bg-clip-text text-transparent">
               {t('hero.title_highlight')}<br />
             </span>
             <span className="mt-2 md:mt-1">

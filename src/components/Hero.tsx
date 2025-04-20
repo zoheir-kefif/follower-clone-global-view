@@ -1,9 +1,10 @@
-
 import { useTranslation } from 'react-i18next';
 import { Card } from './ui/card';
-import { cn } from '@/lib/utils';
-import { User, Heart, Play, Instagram, Youtube, Facebook, ArrowRight } from 'lucide-react';
+import { User, Heart, Play, Instagram, Youtube, Facebook } from 'lucide-react';
 import { useState } from 'react';
+import { SocialNetworkButton } from './social/SocialNetworkButton';
+import { NetworkService } from './social/NetworkService';
+import { FeatureItem } from './features/FeatureItem';
 
 export const Hero = () => {
   const { t } = useTranslation();
@@ -218,58 +219,16 @@ export const Hero = () => {
           </p>
 
           <div className="flex flex-row justify-center gap-2 mb-0 w-full max-w-3xl mx-auto px-4">
-            {socialNetworks.map((network, index) => {
-              const isSelected = selectedNetwork === network.name;
-              
-              return (
-                <button
-                  key={index}
-                  onClick={() => handleNetworkSelection(network.href)}
-                  className={cn(
-                    "relative flex-1 aspect-square rounded-2xl flex items-center justify-center transition-all duration-300",
-                    isSelected 
-                      ? `bg-gradient-to-b ${networkTheme.secondary} shadow-lg scale-105 z-10` 
-                      : "bg-white hover:bg-gray-50 shadow-md hover:shadow-lg hover:scale-102"
-                  )}
-                >
-                  <div 
-                    className={cn(
-                      "w-14 h-14 md:w-16 md:h-16 flex items-center justify-center transition-transform duration-300",
-                      isSelected ? "scale-110" : "hover:scale-105"
-                    )}
-                  >
-                    {typeof network.icon === 'string' ? (
-                      <img 
-                        src={network.icon} 
-                        alt={network.name} 
-                        className="w-full h-full object-contain p-1.5" 
-                      />
-                    ) : (
-                      network.icon
-                    )}
-                  </div>
-                  
-                  {isSelected && (
-                    <>
-                      <div className={cn(
-                        "absolute inset-0 rounded-2xl border-2 animate-pulse",
-                        networkTheme.border
-                      )} />
-                      
-                      <div className={cn(
-                        "absolute -bottom-4 left-0 right-0 mx-auto w-0.5 h-4",
-                        networkTheme.indicator
-                      )}>
-                        <div className={cn(
-                          "absolute -bottom-0.5 -left-1 w-2.5 h-2.5 rounded-full animate-pulse",
-                          networkTheme.indicator
-                        )} />
-                      </div>
-                    </>
-                  )}
-                </button>
-              );
-            })}
+            {socialNetworks.map((network, index) => (
+              <SocialNetworkButton
+                key={index}
+                icon={network.icon}
+                name={network.name}
+                color={network.color}
+                isSelected={selectedNetwork === network.name}
+                onClick={() => handleNetworkSelection(network.href)}
+              />
+            ))}
           </div>
 
           <div className="relative mt-0">
@@ -284,32 +243,16 @@ export const Hero = () => {
                 `bg-gradient-to-br ${networkTheme.cardBg}`
               )}>
                 {currentServices.map((service, index) => (
-                  <a
+                  <NetworkService
                     key={index}
+                    icon={service.icon}
+                    title={service.title}
                     href={service.href}
-                    className={cn(
-                      "block w-full rounded-lg p-3 md:p-3.5 flex items-center justify-between shadow-md hover:shadow-lg transition-all duration-200 group bg-white bg-opacity-70 backdrop-blur-sm hover:bg-opacity-90"
-                    )}
-                  >
-                    <div className="flex items-center gap-3 md:gap-4">
-                      <div className={cn(
-                        "w-11 h-11 md:w-12 md:h-12 rounded-xl flex items-center justify-center p-2 group-hover:scale-105 transition-transform duration-300 bg-gradient-to-br",
-                        networkTheme.secondary
-                      )}>
-                        <div className={networkTheme.primary}>
-                          {service.icon}
-                        </div>
-                      </div>
-                      <span className={cn(
-                        "text-base md:text-lg font-semibold text-gray-800"
-                      )}>
-                        {service.title}
-                      </span>
-                    </div>
-                    <div className="flex items-center justify-center">
-                      <ArrowRight className={cn("w-5 h-5 opacity-70 group-hover:opacity-100 group-hover:translate-x-1 transition-all", networkTheme.primary)} />
-                    </div>
-                  </a>
+                    theme={{
+                      primary: networkTheme.primary,
+                      secondary: networkTheme.secondary
+                    }}
+                  />
                 ))}
               </div>
             </Card>
@@ -318,15 +261,11 @@ export const Hero = () => {
           <Card className="max-w-4xl mx-auto mt-16 bg-white/90 backdrop-blur shadow-xl border-gray-100/30">
             <div className="p-8 space-y-6">
               {features.map((feature, index) => (
-                <div
+                <FeatureItem
                   key={index}
-                  className="flex items-center gap-4 text-left border-b last:border-0 border-gray-100/50 pb-6 last:pb-0"
-                >
-                  <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 rounded-full">
-                    <span className="text-2xl">{feature.icon}</span>
-                  </div>
-                  <span className="text-lg font-bold text-gray-800">{feature.title}</span>
-                </div>
+                  icon={feature.icon}
+                  title={feature.title}
+                />
               ))}
             </div>
           </Card>

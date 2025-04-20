@@ -1,7 +1,7 @@
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Card } from './ui/card';
 import { User, Heart, Play, Instagram, Youtube, Facebook } from 'lucide-react';
-import { useState } from 'react';
 import { SocialNetworkButton } from './social/SocialNetworkButton';
 import { NetworkService } from './social/NetworkService';
 import { FeatureItem } from './features/FeatureItem';
@@ -196,7 +196,7 @@ export const Hero = () => {
   };
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-white via-gray-50 to-gray-100">
+    <div className="relative min-h-screen bg-gradient-to-br from-[#FEC6A1] via-[#FFE5CE] to-[#FFF2E6]">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 right-20 w-72 h-72 bg-gradient-to-br from-gray-200/30 to-gray-300/20 rounded-full blur-3xl animate-blob"></div>
         <div className="absolute bottom-20 left-20 w-72 h-72 bg-gradient-to-br from-gray-200/30 to-gray-300/20 rounded-full blur-3xl animate-blob animation-delay-2000"></div>

@@ -1,6 +1,6 @@
 
 import { LanguageSelector } from './LanguageSelector';
-import { Instagram, Tiktok, Youtube, Facebook } from 'lucide-react';
+import { Instagram, Youtube, Facebook } from 'lucide-react';
 
 export const Header = () => {
   return (
@@ -14,7 +14,7 @@ export const Header = () => {
               Instagram
             </a>
             <a href="/tiktok" className="flex items-center gap-2 text-gray-600 hover:text-gray-900">
-              <Tiktok size={20} />
+              <Youtube size={20} />
               TikTok
             </a>
             <a href="/youtube" className="flex items-center gap-2 text-gray-600 hover:text-gray-900">
@@ -39,3 +39,4 @@ export const Header = () => {
     </header>
   );
 };
+

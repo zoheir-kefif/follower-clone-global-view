@@ -1,5 +1,5 @@
 
-import { Instagram, Tiktok, Youtube, Facebook } from 'lucide-react';
+import { Instagram, Youtube, Facebook } from 'lucide-react';
 
 export const Footer = () => {
   return (
@@ -50,3 +50,4 @@ export const Footer = () => {
     </footer>
   );
 };
+

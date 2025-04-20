@@ -90,7 +90,7 @@ export const Hero = () => {
             {t('hero.subtitle')}
           </p>
 
-          <div className="flex justify-center gap-2 mb-0 w-full max-w-3xl mx-auto px-4">
+          <div className="flex flex-row justify-center gap-2 mb-0 w-full max-w-3xl mx-auto px-4">
             {socialNetworks.map((network, index) => {
               const isSelected = network.href.includes(selectedNetwork);
               const networkName = network.href.split('.com')[0].replace('https://', '');
@@ -100,9 +100,9 @@ export const Hero = () => {
                   key={index}
                   onClick={() => setSelectedNetwork(networkName)}
                   className={cn(
-                    "flex-1 aspect-square rounded-2xl flex items-center justify-center transition-all duration-300 relative group",
+                    "relative flex-1 aspect-square rounded-2xl flex items-center justify-center transition-all duration-300",
                     isSelected 
-                      ? "bg-gradient-to-br from-orange-50 to-orange-100 shadow-[0_0_0_2px_#f97316] scale-105 rounded-b-none" 
+                      ? "bg-gradient-to-b from-white to-orange-50 shadow-lg scale-105 z-10" 
                       : "bg-white hover:bg-orange-50 shadow-md hover:shadow-lg hover:scale-102"
                   )}
                 >
@@ -115,15 +115,18 @@ export const Hero = () => {
                     <img 
                       src={network.icon} 
                       alt="" 
-                      className="w-full h-full object-contain p-1" 
+                      className="w-full h-full object-contain p-1.5" 
                     />
                   </div>
                   
-                  {/* Visual connection element */}
                   {isSelected && (
-                    <div className="absolute -bottom-[1px] left-0 right-0 h-6 bg-gradient-to-br from-orange-50 to-orange-100">
-                      <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[12px] border-l-transparent border-r-[12px] border-r-transparent border-t-[12px] border-orange-500" />
-                    </div>
+                    <>
+                      {/* Glowing border */}
+                      <div className="absolute inset-0 rounded-2xl border-2 border-orange-500 animate-pulse" />
+                      
+                      {/* Connector element - vertical line */}
+                      <div className="absolute -bottom-4 left-0 right-0 mx-auto w-1 h-4 bg-orange-500" />
+                    </>
                   )}
                 </button>
               );
@@ -131,21 +134,15 @@ export const Hero = () => {
           </div>
 
           <div className="relative mt-0">
-            {/* Connector line from selected button to card */}
-            <div className="absolute top-0 left-0 right-0 flex justify-center">
-              <div className="w-px h-4 bg-orange-400/50"></div>
-            </div>
-            
-            <Card className="max-w-3xl mx-auto bg-gradient-to-br from-orange-50/30 to-orange-100/30 backdrop-blur border-orange-100/20 shadow-lg overflow-hidden rounded-2xl border-t-orange-500">
-              <div className={cn(
-                "w-full h-3 bg-gradient-to-r from-orange-100/50 via-orange-50/30 to-orange-100/50",
-                "relative before:absolute before:inset-0 before:bg-[length:200%_100%] before:animate-shimmer before:bg-gradient-to-r before:from-transparent before:via-orange-500/10 before:to-transparent"
-              )} />
-              <div className="p-3 md:p-4 space-y-2.5">
+            <Card className="max-w-3xl mx-auto mt-4 overflow-hidden rounded-2xl shadow-xl border-0">
+              {/* Orange accent bar at the top */}
+              <div className="h-1 w-full bg-orange-500" />
+              
+              <div className="p-4 space-y-2.5 bg-white">
                 {services.map((service, index) => (
                   <button
                     key={index}
-                    className="w-full bg-white hover:bg-orange-50 rounded-lg p-3 md:p-3.5 flex items-center justify-between shadow-md hover:shadow-xl transition-all duration-200 group"
+                    className="w-full bg-gradient-to-r from-orange-50 to-white hover:from-orange-100 hover:to-orange-50 rounded-lg p-3 md:p-3.5 flex items-center justify-between shadow-md hover:shadow-lg transition-all duration-200 group"
                   >
                     <div className="flex items-center gap-3 md:gap-4">
                       <div className="w-11 h-11 md:w-12 md:h-12 bg-gradient-to-br from-orange-100 to-orange-200 rounded-xl flex items-center justify-center p-2 group-hover:scale-105 transition-transform duration-300">

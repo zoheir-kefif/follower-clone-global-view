@@ -1,4 +1,3 @@
-
 import { useTranslation } from 'react-i18next';
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
@@ -21,7 +20,7 @@ export const Hero = () => {
         <div className="text-center mb-16">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-gray-900 tracking-tight leading-tight">
             {t('hero.title_part1')}
-            <span className="block mt-2 text-orange-600">
+            <span className="block mt-2 bg-gradient-to-r from-[#FEC6A1] to-[#FDE1D3] bg-clip-text text-transparent">
               {t('hero.title_highlight')}
             </span>
             {t('hero.title_part2')}
@@ -33,7 +32,7 @@ export const Hero = () => {
 
           <Button 
             size="lg"
-            className="bg-orange-500 text-white hover:bg-orange-600 shadow-lg hover:shadow-xl transition-all duration-300 rounded-full px-8 py-6 text-lg font-medium"
+            className="bg-gradient-to-r from-[#FEC6A1] to-[#FDE1D3] text-gray-800 hover:from-[#FDE1D3] hover:to-[#FEC6A1] shadow-lg hover:shadow-xl transition-all duration-300 rounded-full px-8 py-6 text-lg font-medium"
           >
             {t('hero.button')}
           </Button>

@@ -12,14 +12,14 @@ export const Hero = () => {
   const socialNetworks = [
     { 
       icon: "/lovable-uploads/9946ac27-7509-4639-b273-31d6f888c6a1.png", // TikTok logo
-      href: 'https://tiktok.com',
-      name: 'tiktok',
+      href: 'https://instagram.com',
+      name: 'instagram',
       color: 'bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600'
     },
     { 
       icon: "/lovable-uploads/9218da51-6de2-4495-b7b0-6b9bad43d2dc.png", // Instagram logo
-      href: 'https://instagram.com',
-      name: 'instagram',
+      href: 'https://tiktok.com',
+      name: 'tiktok',
       color: 'bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400'
     },
     { 

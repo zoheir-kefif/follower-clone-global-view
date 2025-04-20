@@ -89,7 +89,7 @@ export const Hero = () => {
             {t('hero.subtitle')}
           </p>
 
-          <div className="flex justify-center gap-3 mb-10 w-full max-w-2xl mx-auto px-4">
+          <div className="flex justify-center gap-2 mb-0 w-full max-w-3xl mx-auto px-4">
             {socialNetworks.map((network, index) => {
               const isSelected = network.href.includes(selectedNetwork);
               return (
@@ -99,31 +99,32 @@ export const Hero = () => {
                   className={cn(
                     "flex-1 aspect-square rounded-2xl flex items-center justify-center transition-all duration-300 relative group",
                     isSelected 
-                      ? "bg-gradient-to-br from-orange-50 to-orange-100 shadow-[0_0_0_2px_#f97316,0_4px_12px_-2px_rgba(249,115,22,0.3)] scale-105" 
+                      ? "bg-gradient-to-br from-orange-50 to-orange-100 shadow-[0_0_0_2px_#f97316] scale-105 rounded-b-none" 
                       : "bg-white hover:bg-orange-50 shadow-md hover:shadow-lg hover:scale-102"
                   )}
                 >
                   <div 
                     className={cn(
-                      "w-12 h-12 md:w-14 md:h-14 flex items-center justify-center rounded-xl transition-transform duration-300",
+                      "w-14 h-14 md:w-16 md:h-16 flex items-center justify-center transition-transform duration-300",
                       isSelected ? "scale-110" : "group-hover:scale-105"
                     )}
                   >
                     <img 
                       src={network.icon} 
                       alt="" 
-                      className="w-full h-full object-contain p-2" 
+                      className="w-full h-full object-contain p-1" 
                     />
                   </div>
-                  {isSelected && (
-                    <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-12 h-1 bg-orange-500 rounded-full shadow-[0_-4px_8px_rgba(249,115,22,0.3)]" />
-                  )}
                 </button>
               );
             })}
           </div>
 
-          <Card className="max-w-xl mx-auto bg-gradient-to-br from-orange-50/30 to-orange-100/30 backdrop-blur border-orange-100/20 shadow-lg overflow-hidden rounded-xl">
+          <Card className="max-w-3xl mx-auto bg-gradient-to-br from-orange-50/30 to-orange-100/30 backdrop-blur border-orange-100/20 shadow-lg overflow-hidden rounded-2xl">
+            <div className={cn(
+              "w-full h-3 bg-gradient-to-r from-orange-100/50 via-orange-50/30 to-orange-100/50",
+              "relative before:absolute before:inset-0 before:bg-[length:200%_100%] before:animate-shimmer before:bg-gradient-to-r before:from-transparent before:via-orange-500/10 before:to-transparent"
+            )} />
             <div className="p-3 md:p-4 space-y-2.5">
               {services.map((service, index) => (
                 <button

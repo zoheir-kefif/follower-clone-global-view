@@ -1,6 +1,6 @@
 
 import { useTranslation } from 'react-i18next';
-import { Lightning, Star, Trophy, CreditCard, Fr } from 'lucide-react';
+import { Zap, Star, Trophy, CreditCard, Flag } from 'lucide-react';
 
 export const Hero = () => {
   const { t } = useTranslation();
@@ -56,7 +56,7 @@ export const Hero = () => {
         <div className="bg-white rounded-2xl shadow-lg p-6">
           <div className="grid grid-cols-1 gap-4">
             <div className="flex items-center gap-2">
-              <Lightning className="text-yellow-500" />
+              <Zap className="text-yellow-500" />
               <span className="text-gray-700">{t('hero.instant_delivery')}</span>
             </div>
             <div className="flex items-center gap-2">
@@ -72,7 +72,7 @@ export const Hero = () => {
               <span className="text-gray-700">{t('hero.payment_methods')}</span>
             </div>
             <div className="flex items-center gap-2">
-              <Fr className="text-blue-500" />
+              <Flag className="text-blue-500" />
               <span className="text-gray-700">{t('hero.french_service')}</span>
             </div>
           </div>

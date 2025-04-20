@@ -1,3 +1,4 @@
+
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
@@ -6,7 +7,7 @@ const resources = {
   fr: {
     translation: {
       "hero.title": "Analysez n'importe quel compte Instagram",
-      "hero.subtitle": "Obtenez des statistiques détaillées sur n'importe quel compte Instagram public",
+      "hero.subtitle": "Meilleure qualité sur le marché Français. Boost l'algorithme.",
       "hero.placeholder": "Entrez un nom d'utilisateur Instagram",
       "hero.button": "Analyser",
       "features.title": "Fonctionnalités",
@@ -17,7 +18,6 @@ const resources = {
       "hero.title_part1": "Obtenez des fans",
       "hero.title_highlight": "français actifs",
       "hero.title_part2": "en quelques secondes !",
-      "hero.subtitle": "Meilleure qualité sur le marché Français. Boost l'algorithme.",
       "hero.youtube_subscribers": "Abonnés YouTube",
       "hero.youtube_views": "Vues YouTube",
       "hero.youtube_likes": "Likes YouTube",
@@ -31,7 +31,7 @@ const resources = {
   en: {
     translation: {
       "hero.title": "Analyze any Instagram account",
-      "hero.subtitle": "Get detailed statistics on any public Instagram account",
+      "hero.subtitle": "Best quality on the French market. Boost the algorithm.",
       "hero.placeholder": "Enter an Instagram username",
       "hero.button": "Analyze",
       "features.title": "Features",
@@ -42,7 +42,6 @@ const resources = {
       "hero.title_part1": "Get",
       "hero.title_highlight": "French active fans",
       "hero.title_part2": "in seconds!",
-      "hero.subtitle": "Best quality on the French market. Boost the algorithm.",
       "hero.youtube_subscribers": "YouTube Subscribers",
       "hero.youtube_views": "YouTube Views",
       "hero.youtube_likes": "YouTube Likes",
@@ -56,7 +55,7 @@ const resources = {
   de: {
     translation: {
       "hero.title": "Analysieren Sie jedes Instagram-Konto",
-      "hero.subtitle": "Erhalten Sie detaillierte Statistiken zu jedem öffentlichen Instagram-Konto",
+      "hero.subtitle": "Beste Qualität auf dem französischen Markt. Boost den Algorithmus.",
       "hero.placeholder": "Instagram-Benutzernamen eingeben",
       "hero.button": "Analysieren",
       "features.title": "Funktionen",
@@ -67,7 +66,6 @@ const resources = {
       "hero.title_part1": "Holen Sie sich",
       "hero.title_highlight": "aktive französische Fans",
       "hero.title_part2": "in Sekunden!",
-      "hero.subtitle": "Beste Qualität auf dem französischen Markt. Boost den Algorithmus.",
       "hero.youtube_subscribers": "YouTube Abonnenten",
       "hero.youtube_views": "YouTube Aufrufe",
       "hero.youtube_likes": "YouTube Likes",
@@ -81,7 +79,7 @@ const resources = {
   it: {
     translation: {
       "hero.title": "Analizza qualsiasi account Instagram",
-      "hero.subtitle": "Ottieni statistiche dettagliate su qualsiasi account Instagram pubblico",
+      "hero.subtitle": "Migliore qualità sul mercato francese. Potenzia l'algoritmo.",
       "hero.placeholder": "Inserisci un nome utente Instagram",
       "hero.button": "Analizzare",
       "features.title": "Funzionalità",
@@ -92,7 +90,6 @@ const resources = {
       "hero.title_part1": "Ottieni",
       "hero.title_highlight": "fan francesi attivi",
       "hero.title_part2": "in pochi secondi!",
-      "hero.subtitle": "Migliore qualità sul mercato francese. Potenzia l'algoritmo.",
       "hero.youtube_subscribers": "Iscritti YouTube",
       "hero.youtube_views": "Visualizzazioni YouTube",
       "hero.youtube_likes": "Mi piace YouTube",

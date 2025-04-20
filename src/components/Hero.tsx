@@ -2,7 +2,7 @@
 import { useTranslation } from 'react-i18next';
 import { Card } from './ui/card';
 import { cn } from '@/lib/utils';
-import { User, Heart, Play, Instagram, BrandsTiktok } from 'lucide-react';
+import { User, Heart, Play, Instagram } from 'lucide-react';
 import { useState } from 'react';
 
 export const Hero = () => {
@@ -11,7 +11,7 @@ export const Hero = () => {
 
   const socialNetworks = [
     { 
-      icon: <Instagram className="w-14 h-14 md:w-16 md:h-16 text-transparent bg-clip-text bg-gradient-to-r from-[#8A3AB9] via-[#E95950] to-[#FCCC63]" />,
+      icon: <Instagram className="w-14 h-14 md:w-16 md:h-16 text-black" />,
       href: 'https://instagram.com',
     },
     { 
@@ -35,17 +35,17 @@ export const Hero = () => {
   const networkServices = {
     instagram: [
       { 
-        icon: <User className="w-7 h-7 md:w-8 md:h-8 text-transparent bg-clip-text bg-gradient-to-r from-[#8A3AB9] via-[#E95950] to-[#FCCC63]" />,
+        icon: <User className="w-7 h-7 md:w-8 md:h-8 text-black" />,
         title: t('hero.instagram_followers'),
         href: '/instagram-followers'
       },
       { 
-        icon: <Heart className="w-7 h-7 md:w-8 md:h-8 text-transparent bg-clip-text bg-gradient-to-r from-[#8A3AB9] via-[#E95950] to-[#FCCC63]" />,
+        icon: <Heart className="w-7 h-7 md:w-8 md:h-8 text-black" />,
         title: t('hero.instagram_likes'),
         href: '/instagram-likes'
       },
       { 
-        icon: <Play className="w-7 h-7 md:w-8 md:h-8 text-transparent bg-clip-text bg-gradient-to-r from-[#8A3AB9] via-[#E95950] to-[#FCCC63]" />,
+        icon: <Play className="w-7 h-7 md:w-8 md:h-8 text-black" />,
         title: t('hero.instagram_views'),
         href: '/instagram-views'
       }

@@ -1,51 +1,46 @@
-
 import { useTranslation } from 'react-i18next';
-import { Button } from './ui/button';
 import { Card } from './ui/card';
-import { Instagram, Youtube, Facebook, Heart } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { ChevronRight } from 'lucide-react';
 
 export const Hero = () => {
   const { t } = useTranslation();
 
   const socialNetworks = [
     { 
-      icon: Instagram,
-      gradient: 'from-pink-500 via-red-500 to-yellow-500',
-      href: 'https://instagram.com'
+      icon: "/lovable-uploads/33f3a639-e3bf-4f58-b8f4-52d6b3d89a52.png",
+      href: 'https://instagram.com',
+      gradient: 'from-pink-500 via-red-500 to-yellow-500'
     },
     { 
-      icon: Youtube,
-      gradient: 'from-red-600 to-red-500',
-      href: 'https://youtube.com'
+      icon: "/lovable-uploads/1471a88d-c2f1-4898-b567-3fb37833cf7e.png",
+      href: 'https://tiktok.com',
+      gradient: 'from-neutral-600 to-neutral-500'
     },
     { 
-      icon: Youtube,
-      gradient: 'from-neutral-600 to-neutral-500',
-      href: 'https://tiktok.com'
+      icon: "/lovable-uploads/6149cbf1-7bd1-4819-bc51-388bc865b2b6.png",
+      href: 'https://youtube.com',
+      gradient: 'from-red-600 to-red-500'
     },
     { 
-      icon: Facebook,
-      gradient: 'from-blue-600 to-blue-500',
-      href: 'https://facebook.com'
+      icon: "/lovable-uploads/79a016fe-1699-4def-bbdd-3d5a0a944fbd.png",
+      href: 'https://facebook.com',
+      gradient: 'from-blue-600 to-blue-500'
     }
   ];
 
   const services = [
     { 
-      icon: '👥',
+      icon: "/lovable-uploads/7585a1a3-ed4e-45a6-af69-2b69ed8725b5.png",
       title: t('hero.instagram_followers'),
-      color: 'bg-gradient-to-br from-pink-50 to-pink-100'
     },
     { 
-      icon: '❤️',
+      icon: "/lovable-uploads/2e71b6ef-f280-4fcd-bd47-89140bbbfcd2.png",
       title: t('hero.instagram_likes'),
-      color: 'bg-gradient-to-br from-red-50 to-red-100'
     },
     { 
-      icon: '👁️',
+      icon: "/lovable-uploads/78547af1-2a14-433e-9a29-455baf369888.png",
       title: t('hero.instagram_views'),
-      color: 'bg-gradient-to-br from-blue-50 to-blue-100'
     }
   ];
 
@@ -96,7 +91,7 @@ export const Hero = () => {
             {t('hero.subtitle')}
           </p>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16 max-w-4xl mx-auto">
+          <div className="flex justify-center gap-4 mb-16">
             {socialNetworks.map((network, index) => (
               <a
                 key={index}
@@ -104,36 +99,33 @@ export const Hero = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={cn(
-                  "flex items-center justify-center p-8 rounded-2xl bg-gradient-to-br shadow-lg hover:shadow-xl transition-all duration-300 text-white",
+                  "flex items-center justify-center p-6 rounded-2xl bg-gradient-to-br shadow-lg hover:shadow-xl transition-all duration-300",
                   network.gradient
                 )}
               >
-                <network.icon className="w-12 h-12" />
+                <img src={network.icon} alt="" className="w-8 h-8" />
               </a>
             ))}
           </div>
 
-          <Card className="max-w-4xl mx-auto bg-white/80 backdrop-blur mb-12 shadow-xl overflow-hidden">
-            <div className="grid grid-cols-1 md:grid-cols-3">
-              {services.map((service, index) => (
-                <div
-                  key={index}
-                  className={cn(
-                    "group p-8 hover:scale-105 transition-transform duration-300",
-                    service.color,
-                    index !== services.length - 1 && "border-b md:border-b-0 md:border-r border-gray-100"
-                  )}
-                >
-                  <div className="flex flex-col items-center gap-4">
-                    <span className="text-4xl">{service.icon}</span>
-                    <span className="text-xl font-semibold text-gray-800">{service.title}</span>
+          <div className="max-w-md mx-auto space-y-3">
+            {services.map((service, index) => (
+              <button
+                key={index}
+                className="w-full bg-white rounded-xl p-4 flex items-center justify-between hover:bg-orange-50/50 transition-colors shadow-sm"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 flex items-center justify-center">
+                    <img src={service.icon} alt="" className="w-6 h-6" />
                   </div>
+                  <span className="font-semibold text-gray-800">{service.title}</span>
                 </div>
-              ))}
-            </div>
-          </Card>
+                <ChevronRight className="w-5 h-5 text-gray-400" />
+              </button>
+            ))}
+          </div>
 
-          <Card className="max-w-4xl mx-auto bg-white/90 backdrop-blur shadow-xl border-orange-100/30">
+          <Card className="max-w-4xl mx-auto mt-16 bg-white/90 backdrop-blur shadow-xl border-orange-100/30">
             <div className="p-8 space-y-6">
               {features.map((feature, index) => (
                 <div

@@ -20,21 +20,22 @@ export const Hero = () => {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
         <div className="text-center mb-16">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-gray-900 tracking-tight leading-tight">
-            Simplifiez votre gestion
+            {t('hero.title_part1')}
             <span className="block mt-2 text-orange-600">
-              financière aujourd'hui
+              {t('hero.title_highlight')}
             </span>
+            {t('hero.title_part2')}
           </h1>
           
           <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed mb-8">
-            Gérez vos finances en toute simplicité avec notre solution intuitive et sécurisée.
+            {t('hero.subtitle')}
           </p>
 
           <Button 
             size="lg"
             className="bg-orange-500 text-white hover:bg-orange-600 shadow-lg hover:shadow-xl transition-all duration-300 rounded-full px-8 py-6 text-lg font-medium"
           >
-            Commencer gratuitement
+            {t('hero.button')}
           </Button>
         </div>
 
@@ -87,4 +88,3 @@ export const Hero = () => {
     </div>
   );
 };
-

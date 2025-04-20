@@ -1,3 +1,4 @@
+
 import { useTranslation } from 'react-i18next';
 import { Card } from './ui/card';
 import { cn } from '@/lib/utils';
@@ -83,38 +84,38 @@ export const Hero = () => {
             </span>
           </h1>
           
-          <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed mb-12">
+          <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed mb-8">
             {t('hero.subtitle')}
           </p>
 
-          <div className="flex justify-center gap-4 mb-12">
+          <div className="flex justify-center gap-4 mb-10">
             {socialNetworks.map((network, index) => (
               <a
                 key={index}
                 href={network.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-16 h-16 bg-white rounded-2xl shadow-lg flex items-center justify-center p-3 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                className="w-14 h-14 md:w-16 md:h-16 bg-white rounded-xl shadow-md flex items-center justify-center p-2.5 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
               >
-                <img src={network.icon} alt="" className="w-full h-full object-contain" />
+                <img src={network.icon} alt="" className="w-8 h-8 md:w-9 md:h-9 object-contain" />
               </a>
             ))}
           </div>
 
-          <Card className="max-w-2xl mx-auto bg-gradient-to-br from-orange-50/80 to-orange-100/80 backdrop-blur border-orange-100/30 shadow-xl overflow-hidden">
-            <div className="p-6 space-y-4">
+          <Card className="max-w-xl mx-auto bg-white/90 backdrop-blur border-orange-100/30 shadow-lg overflow-hidden rounded-xl">
+            <div className="p-3 md:p-4 space-y-2.5">
               {services.map((service, index) => (
                 <button
                   key={index}
-                  className="w-full bg-white rounded-xl p-5 flex items-center justify-between hover:shadow-lg hover:scale-[1.02] transition-all duration-300 group"
+                  className="w-full bg-white hover:bg-orange-50/20 rounded-lg p-3 md:p-3.5 flex items-center justify-between shadow-sm hover:shadow transition-all duration-200 group"
                 >
-                  <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl flex items-center justify-center p-3 group-hover:scale-110 transition-transform duration-300">
-                      <img src={service.icon} alt="" className="w-10 h-10" />
+                  <div className="flex items-center gap-3 md:gap-4">
+                    <div className="w-11 h-11 md:w-12 md:h-12 bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl flex items-center justify-center p-2 group-hover:scale-105 transition-transform duration-300">
+                      <img src={service.icon} alt="" className="w-7 h-7 md:w-8 md:h-8 object-contain" />
                     </div>
-                    <span className="text-lg font-semibold text-gray-800">{service.title}</span>
+                    <span className="text-base md:text-lg font-semibold text-gray-800">{service.title}</span>
                   </div>
-                  <ChevronRight className="w-6 h-6 text-orange-400 group-hover:translate-x-1 transition-transform duration-300" />
+                  <ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-orange-400 group-hover:translate-x-1 transition-transform duration-300" />
                 </button>
               ))}
             </div>
@@ -140,3 +141,4 @@ export const Hero = () => {
     </div>
   );
 };
+

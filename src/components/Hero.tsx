@@ -257,11 +257,11 @@ export const Hero = () => {
             </Card>
 
             {/* Decorative Image */}
-            <div className="w-full">
+            <div className="w-screen relative left-1/2 right-1/2 -mx-[50vw]">
               <img 
                 src="/lovable-uploads/e61a4385-225b-43cf-9d4a-a13fb82782bb.png"
                 alt="Social media decoration"
-                className="w-full h-auto object-cover -mt-2 md:-mt-8"
+                className="w-full h-auto object-cover"
               />
             </div>
           </div>

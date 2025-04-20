@@ -20,7 +20,7 @@ export const Hero = () => {
         <div className="text-center mb-16">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-gray-900 tracking-tight leading-tight">
             {t('hero.title_part1')}
-            <span className="block mt-2 relative bg-[length:200%_100%] animate-shimmer bg-gradient-to-r from-[#F2B33D] via-[#F27830] to-[#F2B33D] bg-clip-text text-transparent">
+            <span className="relative block mt-2 bg-[length:200%_100%] animate-shimmer bg-gradient-to-r from-[#F2B33D] via-[#F27830] to-[#F2B33D] bg-clip-text text-transparent after:absolute after:inset-0 after:bg-gradient-to-r after:from-transparent after:via-white/10 after:to-transparent">
               {t('hero.title_highlight')}
             </span>
             {t('hero.title_part2')}

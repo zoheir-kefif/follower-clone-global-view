@@ -1,3 +1,4 @@
+
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
@@ -15,8 +16,8 @@ const resources = {
       "features.growth": "Croissance du compte",
       "features.posts": "Analyse des publications",
       "hero.title_part1": "Obtenez des",
-      "hero.title_highlight": "français",
-      "hero.title_fans": "actifs",
+      "hero.title_part1_5": "fans",
+      "hero.title_highlight": "français actifs",
       "hero.title_part2": "en quelques secondes !",
       "hero.youtube_subscribers": "Abonnés YouTube",
       "hero.youtube_views": "Vues YouTube",
@@ -40,8 +41,7 @@ const resources = {
       "features.growth": "Account growth",
       "features.posts": "Post analysis",
       "hero.title_part1": "Get",
-      "hero.title_highlight": "French active",
-      "hero.title_fans": "fans",
+      "hero.title_highlight": "French active fans",
       "hero.title_part2": "in seconds!",
       "hero.youtube_subscribers": "YouTube Subscribers",
       "hero.youtube_views": "YouTube Views",
@@ -65,8 +65,7 @@ const resources = {
       "features.growth": "Konto-Wachstum",
       "features.posts": "Beitragsanalyse",
       "hero.title_part1": "Holen Sie sich",
-      "hero.title_highlight": "aktive französische",
-      "hero.title_fans": "Fans",
+      "hero.title_highlight": "aktive französische Fans",
       "hero.title_part2": "in Sekunden!",
       "hero.youtube_subscribers": "YouTube Abonnenten",
       "hero.youtube_views": "YouTube Aufrufe",
@@ -90,8 +89,7 @@ const resources = {
       "features.growth": "Crescita dell'account",
       "features.posts": "Analisi dei post",
       "hero.title_part1": "Ottieni",
-      "hero.title_highlight": "francesi attivi",
-      "hero.title_fans": "fan",
+      "hero.title_highlight": "fan francesi attivi",
       "hero.title_part2": "in pochi secondi!",
       "hero.youtube_subscribers": "Iscritti YouTube",
       "hero.youtube_views": "Visualizzazioni YouTube",

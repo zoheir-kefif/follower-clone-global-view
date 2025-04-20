@@ -14,8 +14,8 @@ export const Hero = () => {
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
         <div className="pt-16 pb-12">
           <h1 className="text-5xl sm:text-6xl font-bold mb-6 text-gray-900 tracking-tight leading-tight">
-            {t('hero.title_part1')} 
-            <span className="text-orange-500 ml-3">{t('hero.title_highlight')}</span>
+            {t('hero.title_part1')}
+            <span className="text-orange-500 ml-3">{t('hero.title_highlight')} </span>
             {t('hero.title_part2')}
           </h1>
           

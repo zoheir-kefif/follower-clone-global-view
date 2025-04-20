@@ -1,7 +1,8 @@
+
 import { useTranslation } from 'react-i18next';
 import { Card } from './ui/card';
 import { cn } from '@/lib/utils';
-import { User, Heart, Play, Instagram, TikTok } from 'lucide-react';
+import { User, Heart, Play, Instagram, BrandsTiktok } from 'lucide-react';
 import { useState } from 'react';
 
 export const Hero = () => {
@@ -14,7 +15,11 @@ export const Hero = () => {
       href: 'https://instagram.com',
     },
     { 
-      icon: <TikTok className="w-14 h-14 md:w-16 md:h-16 text-black" />,
+      icon: <svg className="w-14 h-14 md:w-16 md:h-16 text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M9 12a3 3 0 1 0 6 0 3 3 0 0 0 -6 0"/>
+        <path d="M12.5 8.5c.5 -1.5 1.5 -2 2.5 -2 .5 0 1 0 1.5 .5"/>
+        <path d="M20 6v6a6 6 0 0 1 -6 6h-4a6 6 0 0 1 -6 -6v-6a6 6 0 0 1 6 -6h4a6 6 0 0 1 6 6z"/>
+      </svg>,
       href: 'https://tiktok.com',
     },
     { 
@@ -136,11 +141,15 @@ export const Hero = () => {
                       isSelected ? "scale-110" : "group-hover:scale-105"
                     )}
                   >
-                    <img 
-                      src={network.icon} 
-                      alt="" 
-                      className="w-full h-full object-contain p-1.5" 
-                    />
+                    {typeof network.icon === 'string' ? (
+                      <img 
+                        src={network.icon} 
+                        alt="" 
+                        className="w-full h-full object-contain p-1.5" 
+                      />
+                    ) : (
+                      network.icon
+                    )}
                   </div>
                   
                   {isSelected && (
@@ -199,11 +208,7 @@ export const Hero = () => {
                           ? "bg-gradient-to-br from-gray-700 to-gray-800"
                           : "bg-gradient-to-br from-orange-100 to-orange-200"
                       )}>
-                        {typeof service.icon === 'string' ? (
-                          <img src={service.icon} alt="" className="w-7 h-7 md:w-8 md:h-8 object-contain" />
-                        ) : (
-                          <service.icon className={service.iconClassName} />
-                        )}
+                        {service.icon}
                       </div>
                       <span className={cn(
                         "text-base md:text-lg font-semibold",

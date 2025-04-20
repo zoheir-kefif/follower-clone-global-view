@@ -1,8 +1,7 @@
-
 import { useTranslation } from 'react-i18next';
 import { Card } from './ui/card';
 import { cn } from '@/lib/utils';
-import { User, Heart, Play, Instagram } from 'lucide-react';
+import { User, Heart, Play } from 'lucide-react';
 import { useState } from 'react';
 
 export const Hero = () => {
@@ -11,15 +10,11 @@ export const Hero = () => {
 
   const socialNetworks = [
     { 
-      icon: <Instagram className="w-14 h-14 md:w-16 md:h-16 text-black" />,
+      icon: "/lovable-uploads/9218da51-6de2-4495-b7b0-6b9bad43d2dc.png", // Instagram logo
       href: 'https://instagram.com',
     },
     { 
-      icon: <svg className="w-14 h-14 md:w-16 md:h-16 text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M9 12a3 3 0 1 0 6 0 3 3 0 0 0 -6 0"/>
-        <path d="M12.5 8.5c.5 -1.5 1.5 -2 2.5 -2 .5 0 1 0 1.5 .5"/>
-        <path d="M20 6v6a6 6 0 0 1 -6 6h-4a6 6 0 0 1 -6 -6v-6a6 6 0 0 1 6 -6h4a6 6 0 0 1 6 6z"/>
-      </svg>,
+      icon: "/lovable-uploads/9946ac27-7509-4639-b273-31d6f888c6a1.png", // TikTok logo
       href: 'https://tiktok.com',
     },
     { 
@@ -126,20 +121,15 @@ export const Hero = () => {
     }
   ];
 
-  // Get services for the selected network, defaulting to Instagram if the selected network doesn't exist
   const currentServices = networkServices[selectedNetwork as keyof typeof networkServices] || networkServices.instagram;
   const isTikTok = selectedNetwork === 'tiktok';
 
-  // Function to handle network selection and ensure it exists in networkServices
   const handleNetworkSelection = (network: string) => {
-    // Extract network name from URL
     const networkName = network.split('.com')[0].replace('https://', '');
     
-    // Check if this network exists in our services
     if (networkServices[networkName as keyof typeof networkServices]) {
       setSelectedNetwork(networkName);
     } else {
-      // Default to Instagram if network not supported
       setSelectedNetwork('instagram');
     }
   };

@@ -7,6 +7,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { Languages } from "lucide-react";
 
 const languages = [
   { code: 'fr', name: 'FR', flag: '🇫🇷' },
@@ -26,17 +27,17 @@ export const LanguageSelector = () => {
         <Button 
           variant="ghost" 
           size="sm"
-          className="h-8 w-12 px-1"
+          className="h-8 w-12 px-1 flex items-center justify-center"
         >
-          <span className="text-base">{currentLanguage.flag}</span>
+          <span className="text-base mr-1">{currentLanguage.flag}</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="w-24">
+      <DropdownMenuContent align="end" className="w-24 bg-white shadow-lg z-50">
         {languages.map((lang) => (
           <DropdownMenuItem
             key={lang.code}
             onClick={() => i18n.changeLanguage(lang.code)}
-            className="flex items-center gap-2 justify-between cursor-pointer"
+            className="flex items-center gap-2 justify-between cursor-pointer hover:bg-gray-100"
           >
             <span className="text-base">{lang.flag}</span>
             <span className="text-sm font-medium">{lang.name}</span>

@@ -47,7 +47,9 @@ export const Header = () => {
             <a href="/contact" className="hidden md:block text-gray-600 hover:text-[#F85757] transition-colors duration-200">
               Contact
             </a>
-            <LanguageSelector />
+            <div className="z-50 relative">
+              <LanguageSelector />
+            </div>
             <a href="/cart" className="relative">
               <span className="absolute -top-1 -right-1 bg-[#F85757] text-white rounded-full w-4 h-4 flex items-center justify-center text-xs">
                 0

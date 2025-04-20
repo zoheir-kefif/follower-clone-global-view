@@ -1,3 +1,4 @@
+
 import { useTranslation } from 'react-i18next';
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
@@ -9,6 +10,7 @@ export const Hero = () => {
 
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-white via-orange-50 to-orange-100">
+      {/* Effets de fond améliorés */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 right-20 w-72 h-72 bg-orange-200/30 rounded-full blur-3xl animate-blob"></div>
         <div className="absolute bottom-20 left-20 w-72 h-72 bg-orange-300/20 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
@@ -17,14 +19,15 @@ export const Hero = () => {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-900 tracking-tight leading-[1.2] md:leading-[1.1]">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-gray-900 tracking-tight leading-tight">
             {t('hero.title_part1')}
-            <span className="block mt-2 relative bg-[length:200%_100%] animate-shimmer bg-gradient-to-r from-[#F2B33D] via-[#F27830] to-[#F2B33D] bg-clip-text text-transparent">
-              {t('hero.title_highlight')}
+            <span className="relative block mt-2 bg-gradient-to-r from-[#F2B33D] via-[#F27830] to-[#F2B33D] bg-clip-text text-transparent overflow-hidden">
+              <span className="relative z-10 inline-block">
+                {t('hero.title_highlight')}
+              </span>
+              <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer"></span>
             </span>
-            <span className="block mt-2 md:mt-1">
-              {t('hero.title_part2')}
-            </span>
+            {t('hero.title_part2')}
           </h1>
           
           <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed mb-8">

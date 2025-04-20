@@ -89,7 +89,7 @@ export const Hero = () => {
             {t('hero.subtitle')}
           </p>
 
-          <div className="flex justify-center gap-2 mb-10">
+          <div className="flex justify-center gap-3 mb-10 w-full max-w-2xl mx-auto px-4">
             {socialNetworks.map((network, index) => {
               const isSelected = network.href.includes(selectedNetwork);
               return (
@@ -97,22 +97,26 @@ export const Hero = () => {
                   key={index}
                   onClick={() => setSelectedNetwork(network.href.split('.com')[0].replace('https://', ''))}
                   className={cn(
-                    "w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center p-3 transition-all duration-300 hover:-translate-y-1 group relative overflow-hidden",
+                    "flex-1 aspect-square rounded-2xl flex items-center justify-center transition-all duration-300 relative group",
                     isSelected 
-                      ? "bg-gradient-to-br from-orange-100 to-orange-200 shadow-lg" 
-                      : "bg-white hover:bg-orange-50 shadow-md hover:shadow-lg"
+                      ? "bg-gradient-to-br from-orange-50 to-orange-100 shadow-[0_0_0_2px_#f97316,0_4px_12px_-2px_rgba(249,115,22,0.3)] scale-105" 
+                      : "bg-white hover:bg-orange-50 shadow-md hover:shadow-lg hover:scale-102"
                   )}
                 >
-                  <img 
-                    src={network.icon} 
-                    alt="" 
+                  <div 
                     className={cn(
-                      "w-9 h-9 md:w-11 md:h-11 object-contain transition-transform duration-300",
+                      "w-12 h-12 md:w-14 md:h-14 flex items-center justify-center rounded-xl transition-transform duration-300",
                       isSelected ? "scale-110" : "group-hover:scale-105"
-                    )} 
-                  />
+                    )}
+                  >
+                    <img 
+                      src={network.icon} 
+                      alt="" 
+                      className="w-full h-full object-contain p-2" 
+                    />
+                  </div>
                   {isSelected && (
-                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-8 h-1 bg-orange-400 rounded-t-full" />
+                    <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-12 h-1 bg-orange-500 rounded-full shadow-[0_-4px_8px_rgba(249,115,22,0.3)]" />
                   )}
                 </button>
               );

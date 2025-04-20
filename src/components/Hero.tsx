@@ -17,7 +17,7 @@ export const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-[#F8F9FF] via-white to-[#F0F2FF]" />
       
       {/* Decorative image layer */}
-      <div className="absolute inset-0 pt-[75%]">
+      <div className="absolute inset-0 pb-[20%] md:pb-[10%] lg:pb-[5%]">
         <img 
           src="/lovable-uploads/2ecbff68-5598-4978-8eff-318724fddc7a.png"
           alt="Social media decoration"

@@ -1,4 +1,3 @@
-
 import { useTranslation } from 'react-i18next';
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
@@ -10,7 +9,6 @@ export const Hero = () => {
 
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-white via-orange-50 to-orange-100">
-      {/* Effets de fond améliorés */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 right-20 w-72 h-72 bg-orange-200/30 rounded-full blur-3xl animate-blob"></div>
         <div className="absolute bottom-20 left-20 w-72 h-72 bg-orange-300/20 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
@@ -21,7 +19,7 @@ export const Hero = () => {
         <div className="text-center mb-16">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-gray-900 tracking-tight leading-tight">
             {t('hero.title_part1')}
-            <span className="block mt-2 bg-gradient-to-r from-[#F2B33D] to-[#F27830] bg-clip-text text-transparent">
+            <span className="block mt-2 bg-gradient-to-r from-[#F2B33D] to-[#F27830] bg-clip-text text-transparent animate-[fadeInUp_0.8s_ease-out]">
               {t('hero.title_highlight')}
             </span>
             {t('hero.title_part2')}
@@ -88,4 +86,3 @@ export const Hero = () => {
     </div>
   );
 };
-

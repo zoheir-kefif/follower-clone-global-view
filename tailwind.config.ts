@@ -101,12 +101,23 @@ export default {
           "100%": {
             transform: "translate(0px, 0px) scale(1)",
           },
+        },
+        fadeInUp: {
+          '0%': {
+            opacity: '0',
+            transform: 'translateY(20px)'
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateY(0)'
+          }
         }
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        blob: "blob 7s infinite"
+        blob: "blob 7s infinite",
+        'fadeInUp': 'fadeInUp 0.8s ease-out'
       },
       utilities: {
         '.animation-delay-2000': {

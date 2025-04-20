@@ -17,7 +17,7 @@ const resources = {
       "features.posts": "Analyse des publications",
       "hero.title_part1": "Obtenez des",
       "hero.title_part1_5": "fansss",
-      "hero.title_highlight": "français actifs",
+      "hero.title_highlight": " français actifs ",
       "hero.title_part2": "en quelques secondes !",
       "hero.youtube_subscribers": "Abonnés YouTube",
       "hero.youtube_views": "Vues YouTube",

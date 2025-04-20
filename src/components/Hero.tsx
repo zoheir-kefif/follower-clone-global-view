@@ -255,6 +255,15 @@ export const Hero = () => {
                 ))}
               </div>
             </Card>
+
+            {/* Decorative Image */}
+            <div className="w-full -mt-4 md:-mt-8">
+              <img 
+                src="/lovable-uploads/2ecbff68-5598-4978-8eff-318724fddc7a.png"
+                alt="Social media decoration"
+                className="w-full h-auto object-cover"
+              />
+            </div>
           </div>
 
           <Card className="max-w-4xl mx-auto mt-16 bg-white/90 backdrop-blur shadow-xl border-gray-100/30">

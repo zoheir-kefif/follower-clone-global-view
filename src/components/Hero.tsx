@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { SocialNetworkButton } from './social/SocialNetworkButton';
 import { NetworkService } from './social/NetworkService';
 import { FeatureItem } from './features/FeatureItem';
+import { cn } from '@/lib/utils';
 
 export const Hero = () => {
   const { t } = useTranslation();

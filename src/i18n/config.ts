@@ -1,4 +1,3 @@
-
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
@@ -22,6 +21,9 @@ const resources = {
       "hero.youtube_subscribers": "Abonnés YouTube",
       "hero.youtube_views": "Vues YouTube",
       "hero.youtube_likes": "Likes YouTube",
+      "hero.instagram_followers": "Abonnés Instagram",
+      "hero.instagram_likes": "Likes Instagram",
+      "hero.instagram_views": "Vues Instagram",
       "hero.instant_delivery": "Livraison Instantanée",
       "hero.lifetime_guarantee": "Garantie à vie",
       "hero.best_quality": "Meilleure qualité sur le marché Français",
@@ -46,6 +48,9 @@ const resources = {
       "hero.youtube_subscribers": "YouTube Subscribers",
       "hero.youtube_views": "YouTube Views",
       "hero.youtube_likes": "YouTube Likes",
+      "hero.instagram_followers": "Instagram Followers",
+      "hero.instagram_likes": "Instagram Likes",
+      "hero.instagram_views": "Instagram Views",
       "hero.instant_delivery": "Instant Delivery",
       "hero.lifetime_guarantee": "Lifetime Guarantee",
       "hero.best_quality": "Best quality on the French market",
@@ -70,6 +75,9 @@ const resources = {
       "hero.youtube_subscribers": "YouTube Abonnenten",
       "hero.youtube_views": "YouTube Aufrufe",
       "hero.youtube_likes": "YouTube Likes",
+      "hero.instagram_followers": "Instagram Follower",
+      "hero.instagram_likes": "Instagram Likes",
+      "hero.instagram_views": "Instagram Aufrufe",
       "hero.instant_delivery": "Sofortige Lieferung",
       "hero.lifetime_guarantee": "Lebenslange Garantie",
       "hero.best_quality": "Beste Qualität auf dem französischen Markt",
@@ -94,6 +102,9 @@ const resources = {
       "hero.youtube_subscribers": "Iscritti YouTube",
       "hero.youtube_views": "Visualizzazioni YouTube",
       "hero.youtube_likes": "Mi piace YouTube",
+      "hero.instagram_followers": "Follower Instagram",
+      "hero.instagram_likes": "Mi piace Instagram",
+      "hero.instagram_views": "Visualizzazioni Instagram",
       "hero.instant_delivery": "Consegna Istantanea",
       "hero.lifetime_guarantee": "Garanzia a vita",
       "hero.best_quality": "Migliore qualità sul mercato francese",

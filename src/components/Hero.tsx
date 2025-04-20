@@ -21,7 +21,7 @@ export const Hero = () => {
         <img 
           src="/lovable-uploads/2ecbff68-5598-4978-8eff-318724fddc7a.png"
           alt="Social media decoration"
-          className="absolute bottom-0 left-0 w-full h-auto object-cover"
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[120%] h-auto object-cover"
         />
       </div>
       

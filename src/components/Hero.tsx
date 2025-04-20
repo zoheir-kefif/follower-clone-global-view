@@ -66,6 +66,40 @@ export const Hero = () => {
         title: 'Vues Tiktok',
         href: '/tiktok-views'
       }
+    ],
+    youtube: [
+      {
+        icon: <User className="w-7 h-7 md:w-8 md:h-8 text-black" />,
+        title: 'Abonnés Youtube',
+        href: '/youtube-followers'
+      },
+      {
+        icon: <Heart className="w-7 h-7 md:w-8 md:h-8 text-black" />,
+        title: 'Likes Youtube',
+        href: '/youtube-likes'
+      },
+      {
+        icon: <Play className="w-7 h-7 md:w-8 md:h-8 text-black" />,
+        title: 'Vues Youtube',
+        href: '/youtube-views'
+      }
+    ],
+    facebook: [
+      {
+        icon: <User className="w-7 h-7 md:w-8 md:h-8 text-black" />,
+        title: 'Abonnés Facebook',
+        href: '/facebook-followers'
+      },
+      {
+        icon: <Heart className="w-7 h-7 md:w-8 md:h-8 text-black" />,
+        title: 'Likes Facebook',
+        href: '/facebook-likes'
+      },
+      {
+        icon: <Play className="w-7 h-7 md:w-8 md:h-8 text-black" />,
+        title: 'Vues Facebook',
+        href: '/facebook-views'
+      }
     ]
   };
 
@@ -92,8 +126,23 @@ export const Hero = () => {
     }
   ];
 
-  const currentServices = networkServices[selectedNetwork as keyof typeof networkServices];
+  // Get services for the selected network, defaulting to Instagram if the selected network doesn't exist
+  const currentServices = networkServices[selectedNetwork as keyof typeof networkServices] || networkServices.instagram;
   const isTikTok = selectedNetwork === 'tiktok';
+
+  // Function to handle network selection and ensure it exists in networkServices
+  const handleNetworkSelection = (network: string) => {
+    // Extract network name from URL
+    const networkName = network.split('.com')[0].replace('https://', '');
+    
+    // Check if this network exists in our services
+    if (networkServices[networkName as keyof typeof networkServices]) {
+      setSelectedNetwork(networkName);
+    } else {
+      // Default to Instagram if network not supported
+      setSelectedNetwork('instagram');
+    }
+  };
 
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-white via-orange-50 to-orange-100">
@@ -121,13 +170,13 @@ export const Hero = () => {
 
           <div className="flex flex-row justify-center gap-2 mb-0 w-full max-w-3xl mx-auto px-4">
             {socialNetworks.map((network, index) => {
-              const isSelected = network.href.includes(selectedNetwork);
               const networkName = network.href.split('.com')[0].replace('https://', '');
+              const isSelected = selectedNetwork === networkName;
               
               return (
                 <button
                   key={index}
-                  onClick={() => setSelectedNetwork(networkName)}
+                  onClick={() => handleNetworkSelection(network.href)}
                   className={cn(
                     "relative flex-1 aspect-square rounded-2xl flex items-center justify-center transition-all duration-300",
                     isSelected 

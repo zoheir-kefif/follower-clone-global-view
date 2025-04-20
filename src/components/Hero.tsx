@@ -87,34 +87,34 @@ export const Hero = () => {
             {t('hero.subtitle')}
           </p>
 
-          <div className="flex justify-center gap-6 mb-8">
+          <div className="flex justify-center gap-4 mb-16">
             {socialNetworks.map((network, index) => (
               <a
                 key={index}
                 href={network.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-24 h-24 bg-white rounded-2xl shadow flex items-center justify-center p-5 hover:shadow-lg transition-shadow"
+                className="w-20 h-20 bg-white rounded-2xl shadow flex items-center justify-center p-4 hover:shadow-lg transition-shadow"
               >
                 <img src={network.icon} alt="" className="w-full h-full object-contain" />
               </a>
             ))}
           </div>
 
-          <Card className="max-w-md mx-auto bg-white/90 backdrop-blur shadow-lg border-orange-100/30 -mt-4">
-            <div className="p-5 space-y-4">
+          <Card className="max-w-md mx-auto bg-white/90 backdrop-blur shadow-lg border-orange-100/30">
+            <div className="p-4 space-y-3">
               {services.map((service, index) => (
                 <button
                   key={index}
                   className="w-full bg-orange-50/50 rounded-xl p-4 flex items-center justify-between hover:bg-orange-100/50 transition-colors"
                 >
-                  <div className="flex items-center gap-5">
-                    <div className="w-16 h-16 flex items-center justify-center">
-                      <img src={service.icon} alt="" className="w-10 h-10" />
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 flex items-center justify-center">
+                      <img src={service.icon} alt="" className="w-8 h-8" />
                     </div>
-                    <span className="font-semibold text-gray-800 text-lg">{service.title}</span>
+                    <span className="font-semibold text-gray-800">{service.title}</span>
                   </div>
-                  <ChevronRight className="w-7 h-7 text-gray-400" />
+                  <ChevronRight className="w-6 h-6 text-gray-400" />
                 </button>
               ))}
             </div>

@@ -12,12 +12,12 @@ export const Hero = () => {
   const networkTheme = getNetworkColors(selectedNetwork);
 
   return (
-    <div className="relative min-h-screen">
+    <div className="relative min-h-screen pb-[40%] md:pb-[30%] lg:pb-[20%]">
       {/* Base gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#F8F9FF] via-white to-[#F0F2FF]" />
       
       {/* Decorative image layer */}
-      <div className="absolute inset-0 pb-[20%] md:pb-[10%] lg:pb-[5%]">
+      <div className="absolute inset-0 pb-[40%] md:pb-[30%] lg:pb-[20%]">
         <img 
           src="/lovable-uploads/2ecbff68-5598-4978-8eff-318724fddc7a.png"
           alt="Social media decoration"

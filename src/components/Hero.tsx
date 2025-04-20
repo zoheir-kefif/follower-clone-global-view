@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Card } from './ui/card';
 import { cn } from '@/lib/utils';
-import { ChevronRight } from 'lucide-react';
+import { Play, User, Heart } from 'lucide-react';
 import { useState } from 'react';
 
 export const Hero = () => {
@@ -27,20 +27,45 @@ export const Hero = () => {
     }
   ];
 
-  const services = [
-    { 
-      icon: "/lovable-uploads/7585a1a3-ed4e-45a6-af69-2b69ed8725b5.png",
-      title: t('hero.instagram_followers'),
-    },
-    { 
-      icon: "/lovable-uploads/2e71b6ef-f280-4fcd-bd47-89140bbbfcd2.png",
-      title: t('hero.instagram_likes'),
-    },
-    { 
-      icon: "/lovable-uploads/78547af1-2a14-433e-9a29-455baf369888.png",
-      title: t('hero.instagram_views'),
-    }
-  ];
+  const networkServices = {
+    instagram: [
+      { 
+        icon: "/lovable-uploads/7585a1a3-ed4e-45a6-af69-2b69ed8725b5.png",
+        title: t('hero.instagram_followers'),
+        href: 'https://instagram.com/followers'
+      },
+      { 
+        icon: "/lovable-uploads/2e71b6ef-f280-4fcd-bd47-89140bbbfcd2.png",
+        title: t('hero.instagram_likes'),
+        href: 'https://instagram.com/likes'
+      },
+      { 
+        icon: "/lovable-uploads/78547af1-2a14-433e-9a29-455baf369888.png",
+        title: t('hero.instagram_views'),
+        href: 'https://instagram.com/views'
+      }
+    ],
+    tiktok: [
+      {
+        icon: User,
+        title: 'Abonnés Tiktok',
+        href: 'https://tiktok.com/followers',
+        iconClassName: 'w-7 h-7 md:w-8 md:h-8 text-white'
+      },
+      {
+        icon: Heart,
+        title: 'Likes Tiktok',
+        href: 'https://tiktok.com/likes',
+        iconClassName: 'w-7 h-7 md:w-8 md:h-8 text-white'
+      },
+      {
+        icon: Play,
+        title: 'Vues Tiktok',
+        href: 'https://tiktok.com/views',
+        iconClassName: 'w-7 h-7 md:w-8 md:h-8 text-white'
+      }
+    ]
+  };
 
   const features = [
     {
@@ -64,6 +89,9 @@ export const Hero = () => {
       title: t('hero.french_service'),
     }
   ];
+
+  const currentServices = networkServices[selectedNetwork as keyof typeof networkServices];
+  const isTikTok = selectedNetwork === 'tiktok';
 
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-white via-orange-50 to-orange-100">
@@ -101,7 +129,7 @@ export const Hero = () => {
                   className={cn(
                     "relative flex-1 aspect-square rounded-2xl flex items-center justify-center transition-all duration-300",
                     isSelected 
-                      ? "bg-gradient-to-b from-white to-orange-50 shadow-lg scale-105 z-10" 
+                      ? `bg-gradient-to-b from-white to-${isTikTok ? 'gray-900' : 'orange-50'} shadow-lg scale-105 z-10` 
                       : "bg-white hover:bg-orange-50 shadow-md hover:shadow-lg hover:scale-102"
                   )}
                 >
@@ -120,10 +148,21 @@ export const Hero = () => {
                   
                   {isSelected && (
                     <>
-                      <div className="absolute inset-0 rounded-2xl border-2 border-orange-500/80 animate-pulse" />
+                      <div className={cn(
+                        "absolute inset-0 rounded-2xl border-2 animate-pulse",
+                        isTikTok ? "border-gray-800/80" : "border-orange-500/80"
+                      )} />
                       
-                      <div className="absolute -bottom-4 left-0 right-0 mx-auto w-0.5 h-4 bg-gradient-to-b from-orange-500 to-orange-400">
-                        <div className="absolute -bottom-0.5 -left-1 w-2.5 h-2.5 rounded-full bg-orange-500/80 animate-pulse" />
+                      <div className={cn(
+                        "absolute -bottom-4 left-0 right-0 mx-auto w-0.5 h-4",
+                        isTikTok 
+                          ? "bg-gradient-to-b from-gray-800 to-gray-700"
+                          : "bg-gradient-to-b from-orange-500 to-orange-400"
+                      )}>
+                        <div className={cn(
+                          "absolute -bottom-0.5 -left-1 w-2.5 h-2.5 rounded-full animate-pulse",
+                          isTikTok ? "bg-gray-800/80" : "bg-orange-500/80"
+                        )} />
                       </div>
                     </>
                   )}
@@ -134,22 +173,49 @@ export const Hero = () => {
 
           <div className="relative mt-0">
             <Card className="max-w-3xl mx-auto mt-4 overflow-hidden rounded-2xl shadow-xl border-0">
-              <div className="h-0.5 w-full bg-gradient-to-r from-orange-400 via-orange-500 to-orange-400" />
+              <div className={cn(
+                "h-0.5 w-full",
+                isTikTok 
+                  ? "bg-gradient-to-r from-gray-700 via-gray-800 to-gray-700"
+                  : "bg-gradient-to-r from-orange-400 via-orange-500 to-orange-400"
+              )} />
               
-              <div className="p-4 space-y-2.5 bg-white">
-                {services.map((service, index) => (
-                  <button
+              <div className={cn(
+                "p-4 space-y-2.5",
+                isTikTok ? "bg-gray-900" : "bg-white"
+              )}>
+                {currentServices.map((service, index) => (
+                  <a
                     key={index}
-                    className="w-full bg-gradient-to-r from-orange-50 to-white hover:from-orange-100 hover:to-orange-50 rounded-lg p-3 md:p-3.5 flex items-center justify-between shadow-md hover:shadow-lg transition-all duration-200 group"
+                    href={service.href}
+                    className={cn(
+                      "block w-full rounded-lg p-3 md:p-3.5 flex items-center justify-between shadow-md hover:shadow-lg transition-all duration-200 group",
+                      isTikTok
+                        ? "bg-gradient-to-r from-gray-800 to-gray-900 hover:from-gray-700 hover:to-gray-800"
+                        : "bg-gradient-to-r from-orange-50 to-white hover:from-orange-100 hover:to-orange-50"
+                    )}
                   >
                     <div className="flex items-center gap-3 md:gap-4">
-                      <div className="w-11 h-11 md:w-12 md:h-12 bg-gradient-to-br from-orange-100 to-orange-200 rounded-xl flex items-center justify-center p-2 group-hover:scale-105 transition-transform duration-300">
-                        <img src={service.icon} alt="" className="w-7 h-7 md:w-8 md:h-8 object-contain" />
+                      <div className={cn(
+                        "w-11 h-11 md:w-12 md:h-12 rounded-xl flex items-center justify-center p-2 group-hover:scale-105 transition-transform duration-300",
+                        isTikTok
+                          ? "bg-gradient-to-br from-gray-700 to-gray-800"
+                          : "bg-gradient-to-br from-orange-100 to-orange-200"
+                      )}>
+                        {typeof service.icon === 'string' ? (
+                          <img src={service.icon} alt="" className="w-7 h-7 md:w-8 md:h-8 object-contain" />
+                        ) : (
+                          <service.icon className={service.iconClassName} />
+                        )}
                       </div>
-                      <span className="text-base md:text-lg font-semibold text-gray-900">{service.title}</span>
+                      <span className={cn(
+                        "text-base md:text-lg font-semibold",
+                        isTikTok ? "text-white" : "text-gray-900"
+                      )}>
+                        {service.title}
+                      </span>
                     </div>
-                    <ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-orange-500 group-hover:translate-x-1 transition-transform duration-300" />
-                  </button>
+                  </a>
                 ))}
               </div>
             </Card>

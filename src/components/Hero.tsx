@@ -196,11 +196,13 @@ export const Hero = () => {
   };
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-[#FFF2E0] via-[#FFF6E6] to-[#FFFAF0]">
+    <div className="relative min-h-screen bg-white">
       <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -top-4 right-0 w-96 h-96 bg-gradient-to-br from-orange-50 to-orange-100/50 rounded-full blur-3xl"></div>
         <div className="absolute top-20 right-20 w-72 h-72 bg-gradient-to-br from-gray-200/30 to-gray-300/20 rounded-full blur-3xl animate-blob"></div>
         <div className="absolute bottom-20 left-20 w-72 h-72 bg-gradient-to-br from-gray-200/30 to-gray-300/20 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-gray-100/20 to-gray-200/20 rounded-full blur-3xl animate-blob animation-delay-4000"></div>
+        <div className="absolute top-1/3 left-0 w-64 h-64 bg-gradient-to-br from-orange-50/40 to-orange-100/30 rounded-full blur-3xl"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">

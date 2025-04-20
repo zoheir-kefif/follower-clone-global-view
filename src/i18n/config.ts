@@ -1,4 +1,3 @@
-
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
@@ -15,13 +14,18 @@ const resources = {
       "features.followers": "Analyse des abonnés",
       "features.growth": "Croissance du compte",
       "features.posts": "Analyse des publications",
-      "hero.title_part1": "Obtenez des",
+      "hero.title_part1": "Obtenez des fans",
       "hero.title_highlight": "français actifs",
       "hero.title_part2": "en quelques secondes !",
-      "hero.subtitle_pack": "Meilleure qualité sur le marché français, livré rapidement.",
-      "hero.instagram_pack": "Achetez Instagram",
-      "hero.likes_pack": "Likes Instagram",
-      "hero.views_pack": "Vues Instagram"
+      "hero.subtitle": "Meilleure qualité sur le marché Français. Boost l'algorithme.",
+      "hero.youtube_subscribers": "Abonnés YouTube",
+      "hero.youtube_views": "Vues YouTube",
+      "hero.youtube_likes": "Likes YouTube",
+      "hero.instant_delivery": "Livraison Instantanée",
+      "hero.lifetime_guarantee": "Garantie à vie",
+      "hero.best_quality": "Meilleure qualité sur le marché Français",
+      "hero.payment_methods": "Apple Pay ou carte de crédit",
+      "hero.french_service": "Service 100 % FRANÇAIS"
     }
   },
   en: {
@@ -35,13 +39,18 @@ const resources = {
       "features.followers": "Follower analysis",
       "features.growth": "Account growth",
       "features.posts": "Post analysis",
-      "hero.title_part1": "Get active",
-      "hero.title_highlight": "French fans",
+      "hero.title_part1": "Get",
+      "hero.title_highlight": "French active fans",
       "hero.title_part2": "in seconds!",
-      "hero.subtitle_pack": "Best quality on the French market, delivered quickly.",
-      "hero.instagram_pack": "Buy Instagram",
-      "hero.likes_pack": "Instagram Likes",
-      "hero.views_pack": "Instagram Views"
+      "hero.subtitle": "Best quality on the French market. Boost the algorithm.",
+      "hero.youtube_subscribers": "YouTube Subscribers",
+      "hero.youtube_views": "YouTube Views",
+      "hero.youtube_likes": "YouTube Likes",
+      "hero.instant_delivery": "Instant Delivery",
+      "hero.lifetime_guarantee": "Lifetime Guarantee",
+      "hero.best_quality": "Best quality on the French market",
+      "hero.payment_methods": "Apple Pay or credit card",
+      "hero.french_service": "100% FRENCH Service"
     }
   },
   de: {
@@ -55,13 +64,18 @@ const resources = {
       "features.followers": "Follower-Analyse",
       "features.growth": "Konto-Wachstum",
       "features.posts": "Beitragsanalyse",
-      "hero.title_part1": "Holen Sie sich aktive",
-      "hero.title_highlight": "französische Fans",
+      "hero.title_part1": "Holen Sie sich",
+      "hero.title_highlight": "aktive französische Fans",
       "hero.title_part2": "in Sekunden!",
-      "hero.subtitle_pack": "Beste Qualität auf dem französischen Markt, schnell geliefert.",
-      "hero.instagram_pack": "Instagram kaufen",
-      "hero.likes_pack": "Instagram Likes",
-      "hero.views_pack": "Instagram Views"
+      "hero.subtitle": "Beste Qualität auf dem französischen Markt. Boost den Algorithmus.",
+      "hero.youtube_subscribers": "YouTube Abonnenten",
+      "hero.youtube_views": "YouTube Aufrufe",
+      "hero.youtube_likes": "YouTube Likes",
+      "hero.instant_delivery": "Sofortige Lieferung",
+      "hero.lifetime_guarantee": "Lebenslange Garantie",
+      "hero.best_quality": "Beste Qualität auf dem französischen Markt",
+      "hero.payment_methods": "Apple Pay oder Kreditkarte",
+      "hero.french_service": "100% FRANZÖSISCHER Service"
     }
   },
   it: {
@@ -78,10 +92,15 @@ const resources = {
       "hero.title_part1": "Ottieni",
       "hero.title_highlight": "fan francesi attivi",
       "hero.title_part2": "in pochi secondi!",
-      "hero.subtitle_pack": "Miglior qualità sul mercato francese, consegnato rapidamente.",
-      "hero.instagram_pack": "Acquista Instagram",
-      "hero.likes_pack": "Like Instagram",
-      "hero.views_pack": "Visualizzazioni Instagram"
+      "hero.subtitle": "Migliore qualità sul mercato francese. Potenzia l'algoritmo.",
+      "hero.youtube_subscribers": "Iscritti YouTube",
+      "hero.youtube_views": "Visualizzazioni YouTube",
+      "hero.youtube_likes": "Mi piace YouTube",
+      "hero.instant_delivery": "Consegna Istantanea",
+      "hero.lifetime_guarantee": "Garanzia a vita",
+      "hero.best_quality": "Migliore qualità sul mercato francese",
+      "hero.payment_methods": "Apple Pay o carta di credito",
+      "hero.french_service": "Servizio 100% FRANCESE"
     }
   }
 };

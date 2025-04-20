@@ -8,9 +8,9 @@ export const Hero = () => {
     <div className="bg-gradient-to-b from-purple-600 to-pink-500 py-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
         <h1 className="text-4xl sm:text-5xl font-bold mb-6">
-          <span>{t('hero.main_title')} </span>
-          <span className="text-yellow-400">français actifs</span>
-          <span> en quelques secondes !</span>
+          {t('hero.title_part1')}
+          <span className="text-yellow-400"> {t('hero.title_highlight')} </span>
+          {t('hero.title_part2')}
         </h1>
         <p className="text-lg mb-12">
           {t('hero.subtitle_pack')}

@@ -87,36 +87,38 @@ export const Hero = () => {
             {t('hero.subtitle')}
           </p>
 
-          <div className="flex justify-center gap-4 mb-16">
+          <div className="flex justify-center gap-4 mb-12">
             {socialNetworks.map((network, index) => (
               <a
                 key={index}
                 href={network.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-16 h-16 bg-white rounded-2xl shadow flex items-center justify-center p-3 hover:shadow-lg transition-shadow"
+                className="w-16 h-16 bg-white rounded-2xl shadow-lg flex items-center justify-center p-3 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
               >
                 <img src={network.icon} alt="" className="w-full h-full object-contain" />
               </a>
             ))}
           </div>
 
-          <div className="max-w-md mx-auto space-y-3">
-            {services.map((service, index) => (
-              <button
-                key={index}
-                className="w-full bg-white rounded-xl p-4 flex items-center justify-between hover:bg-orange-50/50 transition-colors shadow-sm"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 flex items-center justify-center">
-                    <img src={service.icon} alt="" className="w-6 h-6" />
+          <Card className="max-w-2xl mx-auto bg-gradient-to-br from-orange-50/80 to-orange-100/80 backdrop-blur border-orange-100/30 shadow-xl overflow-hidden">
+            <div className="p-6 space-y-4">
+              {services.map((service, index) => (
+                <button
+                  key={index}
+                  className="w-full bg-white rounded-xl p-5 flex items-center justify-between hover:shadow-lg hover:scale-[1.02] transition-all duration-300 group"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="w-14 h-14 bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl flex items-center justify-center p-3 group-hover:scale-110 transition-transform duration-300">
+                      <img src={service.icon} alt="" className="w-10 h-10" />
+                    </div>
+                    <span className="text-lg font-semibold text-gray-800">{service.title}</span>
                   </div>
-                  <span className="font-semibold text-gray-800">{service.title}</span>
-                </div>
-                <ChevronRight className="w-5 h-5 text-gray-400" />
-              </button>
-            ))}
-          </div>
+                  <ChevronRight className="w-6 h-6 text-orange-400 group-hover:translate-x-1 transition-transform duration-300" />
+                </button>
+              ))}
+            </div>
+          </Card>
 
           <Card className="max-w-4xl mx-auto mt-16 bg-white/90 backdrop-blur shadow-xl border-orange-100/30">
             <div className="p-8 space-y-6">

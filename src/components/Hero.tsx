@@ -13,7 +13,7 @@ export const Hero = () => {
           <span> en quelques secondes !</span>
         </h1>
         <p className="text-lg mb-12">
-          {t('hero.subtitle')}
+          {t('hero.subtitle_pack')}
         </p>
         
         <div className="flex justify-center gap-4 mb-12">

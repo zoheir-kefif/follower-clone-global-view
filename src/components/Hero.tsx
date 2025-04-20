@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
 import { Card } from './ui/card';
-import { CreditCard, LineChart, TrendingUp, Zap } from 'lucide-react';
+import { CreditCard, LineChart, TrendingUp, Zap, Heart } from 'lucide-react';
 
 export const Hero = () => {
   const { t } = useTranslation();
@@ -20,7 +20,8 @@ export const Hero = () => {
         <div className="text-center mb-16">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-900 tracking-tight leading-[1.2] md:leading-[1.1]">
             {t('hero.title_part1')}
-            <span className="block mt-2 relative bg-[length:200%_100%] animate-shimmer bg-gradient-to-r from-[#F2B33D] via-[#F27830] to-[#F2B33D] bg-clip-text text-transparent">
+            <span className="flex items-center justify-center gap-2 mt-2 relative bg-[length:200%_100%] animate-shimmer bg-gradient-to-r from-[#F2B33D] via-[#F27830] to-[#F2B33D] bg-clip-text text-transparent">
+              <Heart className="w-8 h-8 text-orange-500" />
               {t('hero.title_highlight')}
             </span>
             <span className="block mt-2 md:mt-1">
@@ -89,3 +90,4 @@ export const Hero = () => {
     </div>
   );
 };
+

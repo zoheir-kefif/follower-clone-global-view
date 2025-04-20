@@ -104,10 +104,10 @@ export default {
         },
         shimmer: {
           '0%': {
-            'background-position': '-100% 0',
+            'background-position': '200% 0'
           },
           '100%': {
-            'background-position': '200% 0',
+            'background-position': '-200% 0'
           }
         }
       },
@@ -115,7 +115,7 @@ export default {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         blob: "blob 7s infinite",
-        shimmer: 'shimmer 3s ease-in-out infinite'
+        shimmer: 'shimmer 8s ease-in-out infinite'
       },
       utilities: {
         '.animation-delay-2000': {

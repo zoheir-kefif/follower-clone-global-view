@@ -104,12 +104,10 @@ export default {
         },
         shimmer: {
           '0%': {
-            'background-position': '200% 0',
-            'background-image': 'linear-gradient(110deg, transparent 35%, rgba(255, 255, 255, 0.3) 50%, transparent 65%)'
+            'background-position': '-100% 0',
           },
           '100%': {
-            'background-position': '-200% 0',
-            'background-image': 'linear-gradient(110deg, transparent 35%, rgba(255, 255, 255, 0.3) 50%, transparent 65%)'
+            'background-position': '200% 0',
           }
         }
       },
@@ -117,7 +115,7 @@ export default {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         blob: "blob 7s infinite",
-        shimmer: 'shimmer 5s ease-in-out infinite'
+        shimmer: 'shimmer 3s ease-in-out infinite'
       },
       utilities: {
         '.animation-delay-2000': {

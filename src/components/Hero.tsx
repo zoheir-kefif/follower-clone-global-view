@@ -1,4 +1,3 @@
-
 import { useTranslation } from 'react-i18next';
 import { Card } from './ui/card';
 import { cn } from '@/lib/utils';
@@ -121,11 +120,11 @@ export const Hero = () => {
                   
                   {isSelected && (
                     <>
-                      {/* Glowing border */}
-                      <div className="absolute inset-0 rounded-2xl border-2 border-orange-500 animate-pulse" />
+                      <div className="absolute inset-0 rounded-2xl border-2 border-orange-500/80 animate-pulse" />
                       
-                      {/* Connector element - vertical line */}
-                      <div className="absolute -bottom-4 left-0 right-0 mx-auto w-1 h-4 bg-orange-500" />
+                      <div className="absolute -bottom-4 left-0 right-0 mx-auto w-0.5 h-4 bg-gradient-to-b from-orange-500 to-orange-400">
+                        <div className="absolute -bottom-0.5 -left-1 w-2.5 h-2.5 rounded-full bg-orange-500/80 animate-pulse" />
+                      </div>
                     </>
                   )}
                 </button>
@@ -135,8 +134,7 @@ export const Hero = () => {
 
           <div className="relative mt-0">
             <Card className="max-w-3xl mx-auto mt-4 overflow-hidden rounded-2xl shadow-xl border-0">
-              {/* Orange accent bar at the top */}
-              <div className="h-1 w-full bg-orange-500" />
+              <div className="h-0.5 w-full bg-gradient-to-r from-orange-400 via-orange-500 to-orange-400" />
               
               <div className="p-4 space-y-2.5 bg-white">
                 {services.map((service, index) => (
@@ -177,3 +175,5 @@ export const Hero = () => {
     </div>
   );
 };
+
+export default Hero;

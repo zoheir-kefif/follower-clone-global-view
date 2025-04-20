@@ -2,9 +2,11 @@ import { useTranslation } from 'react-i18next';
 import { Card } from './ui/card';
 import { cn } from '@/lib/utils';
 import { ChevronRight } from 'lucide-react';
+import { useState } from 'react';
 
 export const Hero = () => {
   const { t } = useTranslation();
+  const [selectedNetwork, setSelectedNetwork] = useState('instagram');
 
   const socialNetworks = [
     { 
@@ -87,18 +89,34 @@ export const Hero = () => {
             {t('hero.subtitle')}
           </p>
 
-          <div className="flex justify-center gap-4 mb-10">
-            {socialNetworks.map((network, index) => (
-              <a
-                key={index}
-                href={network.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-14 h-14 md:w-16 md:h-16 bg-white rounded-xl shadow-md flex items-center justify-center p-2.5 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
-              >
-                <img src={network.icon} alt="" className="w-8 h-8 md:w-9 md:h-9 object-contain" />
-              </a>
-            ))}
+          <div className="flex justify-center gap-2 mb-10">
+            {socialNetworks.map((network, index) => {
+              const isSelected = network.href.includes(selectedNetwork);
+              return (
+                <button
+                  key={index}
+                  onClick={() => setSelectedNetwork(network.href.split('.com')[0].replace('https://', ''))}
+                  className={cn(
+                    "w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center p-3 transition-all duration-300 hover:-translate-y-1 group relative overflow-hidden",
+                    isSelected 
+                      ? "bg-gradient-to-br from-orange-100 to-orange-200 shadow-lg" 
+                      : "bg-white hover:bg-orange-50 shadow-md hover:shadow-lg"
+                  )}
+                >
+                  <img 
+                    src={network.icon} 
+                    alt="" 
+                    className={cn(
+                      "w-9 h-9 md:w-11 md:h-11 object-contain transition-transform duration-300",
+                      isSelected ? "scale-110" : "group-hover:scale-105"
+                    )} 
+                  />
+                  {isSelected && (
+                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-8 h-1 bg-orange-400 rounded-t-full" />
+                  )}
+                </button>
+              );
+            })}
           </div>
 
           <Card className="max-w-xl mx-auto bg-gradient-to-br from-orange-50/30 to-orange-100/30 backdrop-blur border-orange-100/20 shadow-lg overflow-hidden rounded-xl">

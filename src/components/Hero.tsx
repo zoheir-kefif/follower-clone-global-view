@@ -1,30 +1,45 @@
 
 import { useTranslation } from 'react-i18next';
-import { Search } from 'lucide-react';
 
 export const Hero = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="bg-gradient-to-b from-blue-50 to-white py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-          {t('hero.title')}
+    <div className="bg-gradient-to-b from-purple-600 to-pink-500 py-16">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+        <h1 className="text-4xl sm:text-5xl font-bold mb-6">
+          <span>Obtenez des fans </span>
+          <span className="text-yellow-400">français actifs</span>
+          <span> en quelques secondes !</span>
         </h1>
-        <p className="text-xl text-gray-600 mb-8">
-          {t('hero.subtitle')}
+        <p className="text-lg mb-12">
+          Meilleure qualité sur le marché français, livré rapidement.
         </p>
-        <div className="max-w-2xl mx-auto">
-          <div className="flex gap-2">
-            <input
-              type="text"
-              placeholder={t('hero.placeholder')}
-              className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <button className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2">
-              <Search size={20} />
-              {t('hero.button')}
-            </button>
+        
+        <div className="flex justify-center gap-4 mb-12">
+          <div className="w-16 h-16"><img src="/instagram.png" alt="Instagram" className="w-full" /></div>
+          <div className="w-16 h-16"><img src="/tiktok.png" alt="TikTok" className="w-full" /></div>
+          <div className="w-16 h-16"><img src="/youtube.png" alt="YouTube" className="w-full" /></div>
+          <div className="w-16 h-16"><img src="/facebook.png" alt="Facebook" className="w-full" /></div>
+        </div>
+
+        <div className="bg-white rounded-lg p-4 max-w-2xl mx-auto">
+          <div className="grid grid-cols-1 gap-4">
+            <div className="flex items-center gap-2 p-3 border rounded-lg cursor-pointer hover:bg-gray-50">
+              <div className="w-8 h-8 bg-[#F85757] rounded-full flex items-center justify-center text-white">1</div>
+              <span className="flex-1 text-left text-gray-900">Achetez Instagram</span>
+              <span className="text-gray-400">›</span>
+            </div>
+            <div className="flex items-center gap-2 p-3 border rounded-lg cursor-pointer hover:bg-gray-50">
+              <div className="w-8 h-8 bg-[#F85757] rounded-full flex items-center justify-center text-white">2</div>
+              <span className="flex-1 text-left text-gray-900">Likes Instagram</span>
+              <span className="text-gray-400">›</span>
+            </div>
+            <div className="flex items-center gap-2 p-3 border rounded-lg cursor-pointer hover:bg-gray-50">
+              <div className="w-8 h-8 bg-[#F85757] rounded-full flex items-center justify-center text-white">3</div>
+              <span className="flex-1 text-left text-gray-900">Vues Instagram</span>
+              <span className="text-gray-400">›</span>
+            </div>
           </div>
         </div>
       </div>

@@ -87,34 +87,34 @@ export const Hero = () => {
             {t('hero.subtitle')}
           </p>
 
-          <div className="flex justify-center gap-6 mb-12">
+          <div className="flex justify-center gap-6 mb-8">
             {socialNetworks.map((network, index) => (
               <a
                 key={index}
                 href={network.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-24 h-24 bg-white rounded-2xl shadow-lg flex items-center justify-center p-4 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                className="w-24 h-24 bg-white rounded-2xl shadow flex items-center justify-center p-5 hover:shadow-lg transition-shadow"
               >
-                <img src={network.icon} alt="" className="w-14 h-14 object-contain" />
+                <img src={network.icon} alt="" className="w-full h-full object-contain" />
               </a>
             ))}
           </div>
 
-          <Card className="max-w-2xl mx-auto bg-white/95 backdrop-blur shadow-xl border-orange-100/30 overflow-hidden">
-            <div className="grid gap-2 p-4">
+          <Card className="max-w-md mx-auto bg-white/90 backdrop-blur shadow-lg border-orange-100/30 -mt-4">
+            <div className="p-5 space-y-4">
               {services.map((service, index) => (
                 <button
                   key={index}
-                  className="w-full bg-orange-50/50 hover:bg-orange-100/50 rounded-xl p-6 flex items-center justify-between transition-all duration-300 group"
+                  className="w-full bg-orange-50/50 rounded-xl p-4 flex items-center justify-between hover:bg-orange-100/50 transition-colors"
                 >
-                  <div className="flex items-center gap-6">
+                  <div className="flex items-center gap-5">
                     <div className="w-16 h-16 flex items-center justify-center">
-                      <img src={service.icon} alt="" className="w-12 h-12 transition-transform duration-300 group-hover:scale-110" />
+                      <img src={service.icon} alt="" className="w-10 h-10" />
                     </div>
-                    <span className="text-lg font-semibold text-gray-800">{service.title}</span>
+                    <span className="font-semibold text-gray-800 text-lg">{service.title}</span>
                   </div>
-                  <ChevronRight className="w-6 h-6 text-gray-400 transition-transform duration-300 group-hover:translate-x-1" />
+                  <ChevronRight className="w-7 h-7 text-gray-400" />
                 </button>
               ))}
             </div>

@@ -1,3 +1,4 @@
+
 import { useTranslation } from 'react-i18next';
 import { Card } from './ui/card';
 import { cn } from '@/lib/utils';
@@ -92,10 +93,12 @@ export const Hero = () => {
           <div className="flex justify-center gap-2 mb-0 w-full max-w-3xl mx-auto px-4">
             {socialNetworks.map((network, index) => {
               const isSelected = network.href.includes(selectedNetwork);
+              const networkName = network.href.split('.com')[0].replace('https://', '');
+              
               return (
                 <button
                   key={index}
-                  onClick={() => setSelectedNetwork(network.href.split('.com')[0].replace('https://', ''))}
+                  onClick={() => setSelectedNetwork(networkName)}
                   className={cn(
                     "flex-1 aspect-square rounded-2xl flex items-center justify-center transition-all duration-300 relative group",
                     isSelected 
@@ -115,33 +118,47 @@ export const Hero = () => {
                       className="w-full h-full object-contain p-1" 
                     />
                   </div>
+                  
+                  {/* Visual connection element */}
+                  {isSelected && (
+                    <div className="absolute -bottom-[1px] left-0 right-0 h-6 bg-gradient-to-br from-orange-50 to-orange-100">
+                      <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[12px] border-l-transparent border-r-[12px] border-r-transparent border-t-[12px] border-orange-500" />
+                    </div>
+                  )}
                 </button>
               );
             })}
           </div>
 
-          <Card className="max-w-3xl mx-auto bg-gradient-to-br from-orange-50/30 to-orange-100/30 backdrop-blur border-orange-100/20 shadow-lg overflow-hidden rounded-2xl">
-            <div className={cn(
-              "w-full h-3 bg-gradient-to-r from-orange-100/50 via-orange-50/30 to-orange-100/50",
-              "relative before:absolute before:inset-0 before:bg-[length:200%_100%] before:animate-shimmer before:bg-gradient-to-r before:from-transparent before:via-orange-500/10 before:to-transparent"
-            )} />
-            <div className="p-3 md:p-4 space-y-2.5">
-              {services.map((service, index) => (
-                <button
-                  key={index}
-                  className="w-full bg-white hover:bg-orange-50 rounded-lg p-3 md:p-3.5 flex items-center justify-between shadow-md hover:shadow-xl transition-all duration-200 group"
-                >
-                  <div className="flex items-center gap-3 md:gap-4">
-                    <div className="w-11 h-11 md:w-12 md:h-12 bg-gradient-to-br from-orange-100 to-orange-200 rounded-xl flex items-center justify-center p-2 group-hover:scale-105 transition-transform duration-300">
-                      <img src={service.icon} alt="" className="w-7 h-7 md:w-8 md:h-8 object-contain" />
-                    </div>
-                    <span className="text-base md:text-lg font-semibold text-gray-900">{service.title}</span>
-                  </div>
-                  <ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-orange-500 group-hover:translate-x-1 transition-transform duration-300" />
-                </button>
-              ))}
+          <div className="relative mt-0">
+            {/* Connector line from selected button to card */}
+            <div className="absolute top-0 left-0 right-0 flex justify-center">
+              <div className="w-px h-4 bg-orange-400/50"></div>
             </div>
-          </Card>
+            
+            <Card className="max-w-3xl mx-auto bg-gradient-to-br from-orange-50/30 to-orange-100/30 backdrop-blur border-orange-100/20 shadow-lg overflow-hidden rounded-2xl border-t-orange-500">
+              <div className={cn(
+                "w-full h-3 bg-gradient-to-r from-orange-100/50 via-orange-50/30 to-orange-100/50",
+                "relative before:absolute before:inset-0 before:bg-[length:200%_100%] before:animate-shimmer before:bg-gradient-to-r before:from-transparent before:via-orange-500/10 before:to-transparent"
+              )} />
+              <div className="p-3 md:p-4 space-y-2.5">
+                {services.map((service, index) => (
+                  <button
+                    key={index}
+                    className="w-full bg-white hover:bg-orange-50 rounded-lg p-3 md:p-3.5 flex items-center justify-between shadow-md hover:shadow-xl transition-all duration-200 group"
+                  >
+                    <div className="flex items-center gap-3 md:gap-4">
+                      <div className="w-11 h-11 md:w-12 md:h-12 bg-gradient-to-br from-orange-100 to-orange-200 rounded-xl flex items-center justify-center p-2 group-hover:scale-105 transition-transform duration-300">
+                        <img src={service.icon} alt="" className="w-7 h-7 md:w-8 md:h-8 object-contain" />
+                      </div>
+                      <span className="text-base md:text-lg font-semibold text-gray-900">{service.title}</span>
+                    </div>
+                    <ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-orange-500 group-hover:translate-x-1 transition-transform duration-300" />
+                  </button>
+                ))}
+              </div>
+            </Card>
+          </div>
 
           <Card className="max-w-4xl mx-auto mt-16 bg-white/90 backdrop-blur shadow-xl border-orange-100/30">
             <div className="p-8 space-y-6">
